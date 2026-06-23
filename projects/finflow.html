@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinFlow | AI-Powered Financial Analytics Platform</title>
+    <meta name="description" content="Case study of FinFlow — a MERN-based transaction intelligence and expense budgeting system powered by Google Gemini LLM.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+
+    <!-- GSAP + ScrollTrigger + Lenis -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer></script>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body class="case-study-body">
+    <!-- Fullscreen Transition Overlay -->
+    <div class="transition-overlay"></div>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Navigation -->
+    <header class="case-study-nav">
+        <a href="../portfolio.html#work" class="back-to-portfolio hover-target">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Back to Portfolio
+        </a>
+    </header>
+
+    <!-- 01 — HERO SECTION -->
+    <section class="case-study-hero">
+        <div class="case-study-hero-inner">
+            <span class="case-study-hero-tag">MERN + AI Platform</span>
+            <h1 class="case-study-hero-title">FinFlow</h1>
+            <p class="case-study-hero-subtitle">AI-Powered Financial Analytics Platform</p>
+            
+            <div class="case-study-meta-grid">
+                <div class="case-study-meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">Lead Architect</span>
+                </div>
+                <div class="case-study-meta-item">
+                    <span class="meta-label">Stack</span>
+                    <span class="meta-value">React, Node.js, Express, MongoDB, JWT, Recharts, Gemini API, Multer, Axios, Tailwind CSS</span>
+                </div>
+                <div class="case-study-meta-item">
+                    <span class="meta-label">Duration</span>
+                    <span class="meta-value">3 Months</span>
+                </div>
+                </div>
+
+            <!-- Hero Visual Placeholder -->
+            <div class="case-study-hero-visual">
+                <div class="fp-visual-placeholder fp-visual--finflow">
+                    <div class="fp-mock-frame">
+                        <div class="fp-mock-bar"><span class="fp-mock-dot fp-mock-dot--r"></span><span class="fp-mock-dot fp-mock-dot--y"></span><span class="fp-mock-dot fp-mock-dot--g"></span></div>
+                        <div class="fp-mock-body">
+                            <div class="fp-mock-line fp-mock-line--accent"></div>
+                            <div class="fp-mock-line fp-mock-line--long"></div>
+                            <div class="fp-mock-line fp-mock-line--medium"></div>
+                            <div class="fp-mock-line fp-mock-line--short"></div>
+                            <div class="fp-mock-line fp-mock-line--long"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 02 — PRODUCT VISION -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">02</span>
+                <h2 class="cs-section-title">Product<br>Vision</h2>
+                <span class="cs-section-subtitle">Personal Finance Analytics</span>
+            </div>
+            <div class="cs-col-content">
+                <p>Full-stack personal finance platform built to help users track expenses, manage category-wise monthly budgets, and make data-driven financial decisions. Engineered secure JWT-authenticated APIs and modular backend services for authentication, expenses, budgets, analytics, AI insights, and currency support. Developed interactive dashboards for category distribution, month-over-month trends, and budget utilization, with reporting features like receipt upload and CSV export. Integrated Gemini-powered assistant to generate personalized, context-aware financial guidance from real user transaction data.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 03 — THE SYSTEM -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">03</span>
+                <h2 class="cs-section-title">The<br>System</h2>
+                <span class="cs-section-subtitle">Architecture &amp; Flow</span>
+            </div>
+            <div class="cs-col-content">
+                <p>FinFlow leverages a multi-tier MERN architecture coupled with real-time AI agents. User data flows securely through specialized APIs, getting indexed into MongoDB before powering prompt vectors sent to the Gemini-1.5-Flash model.</p>
+                
+                <div class="diagram-container">
+                    <div class="diagram-node">
+                        <span class="node-num">01</span>
+                        <h4 class="node-title">User Transaction</h4>
+                        <p class="node-desc">Raw input / Receipt Image</p>
+                    </div>
+                    <span class="diagram-arrow">&rarr;</span>
+                    <div class="diagram-node">
+                        <span class="node-num">02</span>
+                        <h4 class="node-title">Payment APIs</h4>
+                        <p class="node-desc">JWT Authentication &amp; parsing</p>
+                    </div>
+                    <span class="diagram-arrow">&rarr;</span>
+                    <div class="diagram-node">
+                        <span class="node-num">03</span>
+                        <h4 class="node-title">MongoDB Store</h4>
+                        <p class="node-desc">Structured ledger schema</p>
+                    </div>
+                    <span class="diagram-arrow">&rarr;</span>
+                    <div class="diagram-node">
+                        <span class="node-num">04</span>
+                        <h4 class="node-title">Gemini Agent</h4>
+                        <p class="node-desc">Vector prompt recommendations</p>
+                    </div>
+                </div>
+
+                <p>Every transaction record is parsed, validated, and normalized through an Express middleware layer before writing to the database. The conversational chatbot queries these records asynchronously, preserving fast dashboard loads.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 04 — KEY FEATURES -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">04</span>
+                <h2 class="cs-section-title">Key<br>Features</h2>
+                <span class="cs-section-subtitle">Product Capabilities</span>
+            </div>
+            <div class="cs-col-content">
+                <ul class="cs-features-list">
+                    <li class="cs-feature-item"><strong>AI-Driven Money Intelligence:</strong> Continuous personalized, data-backed financial guidance generated through real user transaction logs.</li>
+                    <li class="cs-feature-item"><strong>Smart Tracking Stack:</strong> Automated transaction categorization, receipt image ingestion, and structured data export workflows.</li>
+                    <li class="cs-feature-item"><strong>Real-Time Budgeting:</strong> Set specific monthly limits and track expenditures via secure JWT-based full-stack infrastructure.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 05 — CHALLENGES & SOLUTIONS -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">05</span>
+                <h2 class="cs-section-title">Challenges<br>&amp; Solutions</h2>
+                <span class="cs-section-subtitle">Engineering Fixes</span>
+            </div>
+            <div class="cs-col-content">
+                <p>Integrating third-party LLM providers with sensitive, user-specific financial spreadsheets raised security and performance hurdles.</p>
+
+                <div class="challenge-card">
+                    <div class="challenge-header">
+                        <h4 class="challenge-title">Challenge: Formatting Prompts for Secure LLM Processing</h4>
+                    </div>
+                    <div class="challenge-body">
+                        <p>Sending raw transaction logs directly to LLMs created severe privacy risks. Furthermore, feeding massive database outputs to the API exceeded context limits and generated slow response latency.</p>
+                    </div>
+                    <div class="challenge-fix-header">
+                        <h5 class="challenge-fix-title">Fix: Aggregate Vector Mapping &amp; Data Anonymization</h5>
+                    </div>
+                    <div class="challenge-fix-body">
+                        <p>Implemented a pre-processing compiler that aggregates transaction ledgers into anonymized numerical summaries (categorized spending patterns). Sensitive customer metadata is completely stripped out, and the model receives only vector spending ratios, reducing context sizes and ensuring absolute privacy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 06 — TECHNICAL ACHIEVEMENTS -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">06</span>
+                <h2 class="cs-section-title">Technical<br>Achievements</h2>
+                <span class="cs-section-subtitle">Performance Metrics</span>
+            </div>
+            <div class="cs-col-content">
+                <ul class="cs-features-list" style="margin-bottom: 3rem;">
+                    <li class="cs-feature-item">Designed and implemented 15+ REST endpoints across authentication, expense, budget, dashboard, insights, and currency domains.</li>
+                    <li class="cs-feature-item">Built secure authorization flow with JWT route protection, bcrypt password hashing, and strict per-user database data isolation.</li>
+                    <li class="cs-feature-item">Developed database analytics pipeline for monthly spending trend analysis, category breakdown, and budget-vs-spend performance tracking.</li>
+                    <li class="cs-feature-item">Implemented reporting workflows including file upload handling for receipts and downloadable CSV expense data exports.</li>
+                    <li class="cs-feature-item">Integrated Google Gemini API for personalized AI financial insights and contextual Q&amp;A grounded in user spending patterns.</li>
+                </ul>
+
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-stat">15+</div>
+                        <div class="result-lbl">Secure REST Endpoints</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-stat">100%</div>
+                        <div class="result-lbl">Data Isolation Enforced</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-stat">&lt;1.5s</div>
+                        <div class="result-lbl">LLM Latency Maintained</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="case-study-footer">
+        <h2 class="cs-section-title">Explore More Projects</h2>
+        <div class="footer-btn-wrap" style="display: flex; gap: 1.5rem; justify-content: center; align-items: center; flex-wrap: wrap;">
+            <a href="scholarsync.html" class="btn btn--ghost hover-target">Next Project: ScholarSync &rarr;</a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/cursor.js" defer></script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/animations.js" defer></script>
+    <script src="../js/case-study.js" defer></script>
+</body>
+</html>

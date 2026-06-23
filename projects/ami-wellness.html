@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ami Wellness | AI-Driven Health Perspective Tool</title>
+    <meta name="description" content="Case study of Ami Wellness — a full-stack Next.js and Supabase platform translating wellness stats into AI perspectives.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+
+    <!-- GSAP + ScrollTrigger + Lenis -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer></script>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body class="case-study-body">
+    <!-- Fullscreen Transition Overlay -->
+    <div class="transition-overlay"></div>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Navigation -->
+    <header class="case-study-nav">
+        <a href="../portfolio.html#work" class="back-to-portfolio hover-target">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Back to Portfolio
+        </a>
+    </header>
+
+    <!-- 01 — HERO SECTION -->
+    <section class="case-study-hero">
+        <div class="case-study-hero-inner">
+            <span class="case-study-hero-tag">AI + Next.js + Supabase</span>
+            <h1 class="case-study-hero-title">Ami Wellness</h1>
+            <p class="case-study-hero-subtitle">Transforms static health metrics into a dynamic, AI-driven wellness perspective</p>
+            
+            <div class="case-study-meta-grid">
+                <div class="case-study-meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">AI Developer</span>
+                </div>
+                <div class="case-study-meta-item">
+                    <span class="meta-label">Stack</span>
+                    <span class="meta-value">TypeScript, Next.js, Supabase, Groq Llama 3</span>
+                </div>
+                <div class="case-study-meta-item">
+                    <span class="meta-label">Duration</span>
+                    <span class="meta-value">2 Months</span>
+                </div>
+                </div>
+
+            <!-- Hero Visual Showcase -->
+            <div class="case-study-hero-visual">
+                <div class="fp-visual-placeholder fp-visual--scholar">
+                    <div class="fp-mock-frame">
+                        <div class="fp-mock-bar"><span class="fp-mock-dot fp-mock-dot--r"></span><span class="fp-mock-dot fp-mock-dot--y"></span><span class="fp-mock-dot fp-mock-dot--g"></span></div>
+                        <div class="fp-mock-body">
+                            <div class="fp-mock-line fp-mock-line--accent"></div>
+                            <div class="fp-mock-line fp-mock-line--long"></div>
+                            <div class="fp-mock-line fp-mock-line--medium"></div>
+                            <div class="fp-mock-line fp-mock-line--short"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 02 — WHY IT EXISTS -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">02</span>
+                <h2 class="cs-section-title">Why It<br>Exists</h2>
+                <span class="cs-section-subtitle">Stale Numbers</span>
+            </div>
+            <div class="cs-col-content">
+                <p>Standard fitness and wellness apps log statistics: step counts, hours of sleep, heart rate metrics, and water intake. However, looking at lists of isolated numbers does not give users a clear context of their overall health. Users need qualitative advice explaining how their activity habits interact with one another.</p>
+                <p>Ami Wellness was built to translate static logs into conversational perspectives. By processing user telemetry data, it runs evaluations that explain health correlations and suggest specific habit corrections.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 03 — THE SYSTEM -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">03</span>
+                <h2 class="cs-section-title">The<br>System</h2>
+                <span class="cs-section-subtitle">AI Advice Loop</span>
+            </div>
+            <div class="cs-col-content">
+                <p>UserData collects inside Next.js client forms, syncing instantly to PostgreSQL tables before feeding prompts to Llama-3 models hosted on Groq Cloud servers.</p>
+                
+                <div class="diagram-container">
+                    <div class="diagram-node">
+                        <span class="node-num">01</span>
+                        <h4 class="node-title">Metrics Input</h4>
+                        <p class="node-desc">TypeScript dashboard form</p>
+                    </div>
+                    <span class="diagram-arrow">&rarr;</span>
+                    <div class="diagram-node">
+                        <span class="node-num">02</span>
+                        <h4 class="node-title">Supabase Sync</h4>
+                        <p class="node-desc">Real-time DB write log</p>
+                    </div>
+                    <span class="diagram-arrow">&rarr;</span>
+                    <div class="diagram-node">
+                        <span class="node-num">03</span>
+                        <h4 class="node-title">Groq Engine</h4>
+                        <p class="node-desc">Llama-3 query processing</p>
+                    </div>
+                    <span class="diagram-arrow">&rarr;</span>
+                    <div class="diagram-node">
+                        <span class="node-num">04</span>
+                        <h4 class="node-title">User Perspective</h4>
+                        <p class="node-desc">Custom wellness dashboard cards</p>
+                    </div>
+                </div>
+
+                <p>All database mutations run under row-level security (RLS) layers inside Supabase, protecting private health records from unauthorized API read requests.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 04 — KEY FEATURES -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">04</span>
+                <h2 class="cs-section-title">Key<br>Features</h2>
+                <span class="cs-section-subtitle">AI Health Logs</span>
+            </div>
+            <div class="cs-col-content">
+                <p>Designed to convert raw spreadsheet numbers into comprehensive daily summaries.</p>
+                
+                <ul class="cs-features-list">
+                    <li class="cs-feature-item"><strong>AI Perspectives:</strong> Generates cohesive wellness summaries using Llama-3 parsing engines.</li>
+                    <li class="cs-feature-item"><strong>Telemetry Logging:</strong> Logs water, sleep, exercise, and diet parameters in responsive forms.</li>
+                    <li class="cs-feature-item"><strong>Supabase Backend:</strong> Persistent PostgreSQL tables running active Row-Level Security parameters.</li>
+                    <li class="cs-feature-item"><strong>Next.js App:</strong> Responsive TypeScript interface built with modular dashboard layouts.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 05 — CHALLENGES & SOLUTIONS -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">05</span>
+                <h2 class="cs-section-title">Challenges<br>&amp; Solutions</h2>
+                <span class="cs-section-subtitle">Model Formats</span>
+            </div>
+            <div class="cs-col-content">
+                <p>Handling free-form text outputs from LLMs makes it difficult to parse advice arrays into structured dashboard panels and widgets.</p>
+
+                <div class="challenge-card">
+                    <div class="challenge-header">
+                        <h4 class="challenge-title">Challenge: Parsing Free-Text LLM Responses into Layout Widgets</h4>
+                    </div>
+                    <div class="challenge-body">
+                        <p>Models occasionally output conversational remarks, markdown tables, or invalid JSON, causing parsing failures on the Next.js client during dashboard updates.</p>
+                    </div>
+                    <div class="challenge-fix-header">
+                        <h5 class="challenge-fix-title">Fix: Structured JSON Schema Enforcement &amp; Zod Validation</h5>
+                    </div>
+                    <div class="challenge-fix-body">
+                        <p>We implemented JSON mode flags on the Groq API call, forcing Llama-3 to respond strictly within a defined object template. In the Next.js server route, we run the incoming payload through a Zod schema parser to validate object types (e.g. integer scores, text arrays) before returning the response to the client, guaranteeing crash-free rendering of advice cards.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 06 — IMPACT & RESULTS -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">06</span>
+                <h2 class="cs-section-title">Impact &amp;<br>Results</h2>
+                <span class="cs-section-subtitle">System Metrics</span>
+            </div>
+            <div class="cs-col-content">
+                <p>The resulting AI feedback loop delivers responsive, reliable health insights under high server security.</p>
+
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-stat">100%</div>
+                        <div class="result-lbl">Valid JSON Schema Parses</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-stat">&lt;2.0s</div>
+                        <div class="result-lbl">Groq Llama-3 Response Latency</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-stat">99.8%</div>
+                        <div class="result-lbl">Supabase Database Uptime</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="case-study-footer">
+        <h2 class="cs-section-title">Explore More Projects</h2>
+        <div class="footer-btn-wrap" style="display: flex; gap: 1.5rem; justify-content: center; align-items: center; flex-wrap: wrap;">
+            <a href="cognify.html" class="btn btn--ghost hover-target">Next Project: Cognify &rarr;</a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/cursor.js" defer></script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/animations.js" defer></script>
+    <script src="../js/case-study.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindMe | B2B AI SaaS &amp; WhatsApp Task Automation</title>
+    <meta name="description" content="Case study of MindMe — a multi-tenant B2B AI SaaS that converts unstructured WhatsApp conversation data into structured, trackable tasks.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+
+    <!-- GSAP + ScrollTrigger + Lenis -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer></script>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body class="case-study-body">
+    <!-- Fullscreen Transition Overlay -->
+    <div class="transition-overlay"></div>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Navigation -->
+    <header class="case-study-nav">
+        <a href="../portfolio.html#work" class="back-to-portfolio hover-target">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Back to Portfolio
+        </a>
+    </header>
+
+    <!-- 01 — HERO SECTION -->
+    <section class="case-study-hero">
+        <div class="case-study-hero-inner">
+            <span class="case-study-hero-tag">B2B AI SaaS Platform</span>
+            <h1 class="case-study-hero-title">MindMe</h1>
+            <p class="case-study-hero-subtitle">B2B task automation platform transforming unstructured WhatsApp logs into operational workspaces</p>
+            
+            <div class="case-study-meta-grid">
+                <div class="case-study-meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">Lead Full-Stack Developer</span>
+                </div>
+                <div class="case-study-meta-item">
+                    <span class="meta-label">Stack</span>
+                    <span class="meta-value">Next.js, GPT-4o-mini, Sanity, AWS SES</span>
+                </div>
+                <div class="case-study-meta-item">
+                    <span class="meta-label">Duration</span>
+                    <span class="meta-value">Internship (Luneox)</span>
+                </div>
+                </div>
+
+            <!-- Hero Visual Showcase -->
+            <div class="case-study-hero-visual">
+                <div class="fp-visual-placeholder fp-visual--finflow">
+                    <div class="fp-mock-frame">
+                        <div class="fp-mock-bar"><span class="fp-mock-dot fp-mock-dot--r"></span><span class="fp-mock-dot fp-mock-dot--y"></span><span class="fp-mock-dot fp-mock-dot--g"></span></div>
+                        <div class="fp-mock-body">
+                            <div class="fp-mock-line fp-mock-line--accent"></div>
+                            <div class="fp-mock-line fp-mock-line--long"></div>
+                            <div class="fp-mock-line fp-mock-line--medium"></div>
+                            <div class="fp-mock-line fp-mock-line--short"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 02 — PRODUCT VISION -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">02</span>
+                <h2 class="cs-section-title">Product<br>Vision</h2>
+                <span class="cs-section-subtitle">Operational Workspace</span>
+            </div>
+            <div class="cs-col-content">
+                <div class="cs-highlight-box">
+                    <h3 class="cs-highlight-title">The Problem Space</h3>
+                    <p>Modern operational teams spend hours collaborating inside WhatsApp groups. However, vital action items, client details, and commitments get buried under hundreds of messages. Deadlines are routinely forgotten, task ownership remains ambiguous, and managers have zero central visibility on progress.</p>
+                </div>
+                
+                <h3 class="cs-highlight-title">The Solution</h3>
+                <p><strong>MindMe</strong> transforms WhatsApp from a simple communication app into an active operational workspace. By parsing group chats in real-time, the platform automatically detects actionable work, assigns ownership, schedules reminders, and tracks execution states, creating complete organizational accountability without forcing team members to change their existing chat workflow.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 03 — MULTI-TENANT ARCHITECTURE -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">03</span>
+                <h2 class="cs-section-title">Multi-Tenant<br>Architecture</h2>
+                <span class="cs-section-subtitle">Isolated B2B Scoping</span>
+            </div>
+            <div class="cs-col-content">
+                <p>Designed as a commercial multi-tenant SaaS, MindMe isolates each company's workspace. Every logged task, webhook channel, custom reminder, dashboard analytic, and notification layout is strictly scoped by organization ID.</p>
+                
+                <div class="diagram-container">
+                    <div style="text-align: center; width: 100%; font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.4; color: var(--gold);">
+                        Organisation<br>
+                        │<br>
+                        ┌───┼────┐<br>
+                        Users Groups Tasks
+                    </div>
+                </div>
+
+                <p>This layout ensures that multiple corporate teams share the same cloud hosting infrastructure and Sanity CMS datastore securely while guaranteeing complete data isolation and zero cross-tenant leakages at the query layer.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 04 — OPERATIONS & AI PIPELINE -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">04</span>
+                <h2 class="cs-section-title">Operational<br>Core &amp; AI</h2>
+                <span class="cs-section-subtitle">Data Pipelines</span>
+            </div>
+            <div class="cs-col-content">
+                <h3 class="cs-highlight-title">WhatsApp Group Operations</h3>
+                <p>Administrators can monitor and link several WhatsApp groups through a central dashboard. The system tracks metrics to evaluate group activities: message count trends, task extraction rates, members completion ratios, group health parameters, active members indices, and last activity log times.</p>
+
+                <h3 class="cs-highlight-title">The AI Extraction Pipeline</h3>
+                <p>We designed a real-time extraction pipeline using GPT-4o-mini that parses conversation contexts and logs items in under two seconds:</p>
+
+                <div class="diagram-container">
+                    <div class="diagram-node"><span class="node-num">01</span><h4 class="node-title">WhatsApp Message</h4></div>
+                    <span class="diagram-arrow">&rarr;</span>
+                    <div class="diagram-node"><span class="node-num">02</span><h4 class="node-title">Webhook Ingestion</h4></div>
+                    <span class="diagram-arrow">&rarr;</span>
+                    <div class="diagram-node"><span class="node-num">03</span><h4 class="node-title">Preprocessing</h4></div>
+                    <span class="diagram-arrow">&rarr;</span>
+                    <div class="diagram-node"><span class="node-num">04</span><h4 class="node-title">GPT-4o-mini</h4></div>
+                </div>
+                <div class="diagram-container" style="margin-top: -1.5rem;">
+                    <div class="diagram-node"><span class="node-num">05</span><h4 class="node-title">Task Parse</h4></div>
+                    <span class="diagram-arrow">&rarr;</span>
+                    <div class="diagram-node"><span class="node-num">06</span><h4 class="node-title">Confidence Score</h4></div>
+                    <span class="diagram-arrow">&rarr;</span>
+                    <div class="diagram-node"><span class="node-num">07</span><h4 class="node-title">Sanity CMS</h4></div>
+                    <span class="diagram-arrow">&rarr;</span>
+                    <div class="diagram-node"><span class="node-num">08</span><h4 class="node-title">Dashboard Update</h4></div>
+                </div>
+
+                <h3 class="cs-highlight-title">Automated Reminder System</h3>
+                <p>An event-driven scheduler continuously monitors task deadlines. When the scheduler identifies upcoming limits, overdue cards, or unassigned items, it dispatches reminders through WhatsApp and email channels dynamically.</p>
+
+                <h3 class="cs-highlight-title">Interactive Task Actions</h3>
+                <p>Users can perform updates directly inside the WhatsApp conversation window. Replying with specific indicators triggers automation commands: <strong>1</strong> marks a task complete, <strong>2</strong> snoozes it for two hours, and <strong>3</strong> reassigns the ticket — requiring no dashboard logins.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 05 — DASHBOARD & TEAM ROLES -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">05</span>
+                <h2 class="cs-section-title">Dashboard &amp;<br>Team Roles</h2>
+                <span class="cs-section-subtitle">RBAC &amp; Audits</span>
+            </div>
+            <div class="cs-col-content">
+
+                <h3 class="cs-highlight-title">User &amp; Role Management</h3>
+                <p>Organizations enforce security policies using Role-Based Access Control (RBAC). Three distinct scopes define user capabilities:</p>
+                <ul class="cs-features-list">
+                    <li class="cs-feature-item"><strong>Admin:</strong> Configures workspace integrations, links new WhatsApp groups, and alters settings.</li>
+                    <li class="cs-feature-item"><strong>Manager:</strong> Reassigns tasks, reviews team analytics, and edits reminder intervals.</li>
+                    <li class="cs-feature-item"><strong>Member:</strong> Views assigned items, logs task updates, and sets status tags.</li>
+                </ul>
+
+                <h3 class="cs-highlight-title">System Activity Timeline</h3>
+                <p>Every operational mutation writes to an immutable event ledger. The timeline records details like groups connecting, tasks being created/completed/snoozed, and reminders being dispatched, generating a clean audit trail.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 06 — END-TO-END WORKFLOW -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">06</span>
+                <h2 class="cs-section-title">End-to-End<br>Workflow</h2>
+                <span class="cs-section-subtitle">System Lifecycle</span>
+            </div>
+            <div class="cs-col-content">
+                <p>The loop operates continuously as an active feedback system, keeping teams aligned without manual oversight.</p>
+                
+                <ul class="cs-features-list">
+                    <li class="cs-feature-item"><strong>Step 1:</strong> User writes message inside a monitored WhatsApp group.</li>
+                    <li class="cs-feature-item"><strong>Step 2:</strong> Ingestion webhook forwards the raw text to our Next.js API.</li>
+                    <li class="cs-feature-item"><strong>Step 3:</strong> GPT-4o-mini parses context, outputting structured task parameters.</li>
+                    <li class="cs-feature-item"><strong>Step 4:</strong> Task inserts into Sanity CMS, updating the dashboard instantly.</li>
+                    <li class="cs-feature-item"><strong>Step 5:</strong> Chronometer indexes deadlines, scheduling WhatsApp/email reminder updates.</li>
+                    <li class="cs-feature-item"><strong>Step 6:</strong> Member replies directly on WhatsApp to resolve or snooze the ticket.</li>
+                    <li class="cs-feature-item"><strong>Step 7:</strong> Webhook catches reply, updates the task status, and logs event to the audit timeline.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 07 — TECH STACK & CHALLENGES -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">07</span>
+                <h2 class="cs-section-title">Tech Stack &amp;<br>Challenges</h2>
+                <span class="cs-section-subtitle">Developer Metrics</span>
+            </div>
+            <div class="cs-col-content">
+                <h3 class="cs-highlight-title">Detailed Tech Stack</h3>
+                
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-stat" style="font-size: 1.5rem; font-family: var(--font-display);">Frontend</div>
+                        <p class="result-lbl" style="font-size: 0.75rem; margin-top: 0.5rem; line-height: 1.4;">Next.js, React, TS, Tailwind, Shadcn</p>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-stat" style="font-size: 1.5rem; font-family: var(--font-display);">Backend</div>
+                        <p class="result-lbl" style="font-size: 0.75rem; margin-top: 0.5rem; line-height: 1.4;">Next.js API, Sanity, GROQ</p>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-stat" style="font-size: 1.5rem; font-family: var(--font-display);">AI &amp; Hosting</div>
+                        <p class="result-lbl" style="font-size: 0.75rem; margin-top: 0.5rem; line-height: 1.4;">GPT-4o-mini, WHAPI, Vercel, Cron</p>
+                    </div>
+                </div>
+
+                <h3 class="cs-highlight-title">Technical Challenges Resolved</h3>
+                
+                <ul class="cs-features-list">
+                    <li class="cs-feature-item"><strong>Duplicate Webhook Events:</strong> Network delivery retries often sent duplicated task alerts. Fixed by generating MD5 message hashes, indexing them as unique keys inside a Redis transaction cache to ignore repeated calls.</li>
+                    <li class="cs-feature-item"><strong>Multi-Tenant Isolation:</strong> Enforced strict Row-Level isolation. Checked organization scoping rules server-side on every GROQ database request to block unauthorized cross-tenant mutations.</li>
+                    <li class="cs-feature-item"><strong>Task Extraction Accuracy:</strong> Conversation noise led to false task logs. Resolved by engineering structured JSON schema outputs on GPT-4o-mini with confidence filters rejecting scores below 0.85.</li>
+                    <li class="cs-feature-item"><strong>WhatsApp Group Ownership:</strong> Resolving message coordinates across diverse team channels. Resolved by binding group IDs dynamically inside tenant database configurations on setup.</li>
+                    <li class="cs-feature-item"><strong>Reminder Scheduling:</strong> Timing cron check calls efficiently. Resolved by mapping task targets onto scalable Vercel Cron intervals, calling batch notifications.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="case-study-footer">
+        <h2 class="cs-section-title">Explore More Projects</h2>
+        <div class="footer-btn-wrap" style="display: flex; gap: 1.5rem; justify-content: center; align-items: center; flex-wrap: wrap;">
+            <a href="crimelens.html" class="btn btn--ghost hover-target">Next Project: CrimeLens &rarr;</a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/cursor.js" defer></script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/animations.js" defer></script>
+    <script src="../js/case-study.js" defer></script>
+</body>
+</html>

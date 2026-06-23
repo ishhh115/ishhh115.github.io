@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradeFlow | Real-Time Workflow &amp; Transaction Logger</title>
+    <meta name="description" content="Case study of TradeFlow — a MERN-based transaction logging and workflow tracking tool backed by WebSockets.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+
+    <!-- GSAP + ScrollTrigger + Lenis -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer></script>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body class="case-study-body">
+    <!-- Fullscreen Transition Overlay -->
+    <div class="transition-overlay"></div>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Navigation -->
+    <header class="case-study-nav">
+        <a href="../portfolio.html#work" class="back-to-portfolio hover-target">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Back to Portfolio
+        </a>
+    </header>
+
+    <!-- 01 — HERO SECTION -->
+    <section class="case-study-hero">
+        <div class="case-study-hero-inner">
+            <span class="case-study-hero-tag">MERN + WebSockets</span>
+            <h1 class="case-study-hero-title">TradeFlow</h1>
+            <p class="case-study-hero-subtitle">Real-time workflow manager and transaction logging platform</p>
+            
+            <div class="case-study-meta-grid">
+                <div class="case-study-meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">Backend Architect</span>
+                </div>
+                <div class="case-study-meta-item">
+                    <span class="meta-label">Stack</span>
+                    <span class="meta-value">React, Node.js, Express, MongoDB, Socket.io</span>
+                </div>
+                <div class="case-study-meta-item">
+                    <span class="meta-label">Duration</span>
+                    <span class="meta-value">2 Months</span>
+                </div>
+                </div>
+
+            <!-- Hero Visual Showcase -->
+            <div class="case-study-hero-visual">
+                <div class="fp-visual-placeholder fp-visual--finflow">
+                    <div class="fp-mock-frame">
+                        <div class="fp-mock-bar"><span class="fp-mock-dot fp-mock-dot--r"></span><span class="fp-mock-dot fp-mock-dot--y"></span><span class="fp-mock-dot fp-mock-dot--g"></span></div>
+                        <div class="fp-mock-body">
+                            <div class="fp-mock-line fp-mock-line--accent"></div>
+                            <div class="fp-mock-line fp-mock-line--long"></div>
+                            <div class="fp-mock-line fp-mock-line--medium"></div>
+                            <div class="fp-mock-line fp-mock-line--long"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 02 — WHY IT EXISTS -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">02</span>
+                <h2 class="cs-section-title">Why It<br>Exists</h2>
+                <span class="cs-section-subtitle">Real-Time Audits</span>
+            </div>
+            <div class="cs-col-content">
+                <p>Trading desks and logic operations process high-frequency transaction files. Standard web application models require page refreshes or polling loops to synchronize state changes, creating delays that are unacceptable for live audit operations. Brokers need sub-second updates on trade logs, order queues, and progress timelines.</p>
+                <p>TradeFlow resolves this by establishing persistent, duplex WebSocket connections. It synchronizes transaction updates, alerts state transitions, and pushes data mutations instantly across all connected dashboard terminals.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 03 — THE SYSTEM -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">03</span>
+                <h2 class="cs-section-title">The<br>System</h2>
+                <span class="cs-section-subtitle">WebSocket Pipelines</span>
+            </div>
+            <div class="cs-col-content">
+                <p>Trades commit through transactional API routes, triggering broadcast events over Socket.io servers before writing to persistent MongoDB database entries.</p>
+                
+                <div class="diagram-container">
+                    <div class="diagram-node">
+                        <span class="node-num">01</span>
+                        <h4 class="node-title">Trade Execution</h4>
+                        <p class="node-desc">Broker confirms transaction</p>
+                    </div>
+                    <span class="diagram-arrow">&rarr;</span>
+                    <div class="diagram-node">
+                        <span class="node-num">02</span>
+                        <h4 class="node-title">Socket Ingestion</h4>
+                        <p class="node-desc">Throttled event queues</p>
+                    </div>
+                    <span class="diagram-arrow">&rarr;</span>
+                    <div class="diagram-node">
+                        <span class="node-num">03</span>
+                        <h4 class="node-title">MongoDB Log</h4>
+                        <p class="node-desc">Database insert batching</p>
+                    </div>
+                    <span class="diagram-arrow">&rarr;</span>
+                    <div class="diagram-node">
+                        <span class="node-num">04</span>
+                        <h4 class="node-title">Dashboard Push</h4>
+                        <p class="node-desc">Real-time charts update</p>
+                    </div>
+                </div>
+
+                <p>This layout prevents UI thread blocking, allowing brokers to manage long order queues without experiencing dashboard page lags.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 04 — KEY FEATURES -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">04</span>
+                <h2 class="cs-section-title">Key<br>Features</h2>
+                <span class="cs-section-subtitle">Core Mechanics</span>
+            </div>
+            <div class="cs-col-content">
+                <p>Optimized for real-time monitoring and historical auditing of high-frequency records.</p>
+                
+                <ul class="cs-features-list">
+                    <li class="cs-feature-item"><strong>Socket.io Ingestion:</strong> Handles real-time transaction updates, order events, and system logs.</li>
+                    <li class="cs-feature-item"><strong>Workflow Tracker:</strong> Manages order states (pending, verified, logged, audited) in visual column boards.</li>
+                    <li class="cs-feature-item"><strong>Audit Log Exports:</strong> Generates formatted CSV sheets containing timestamped trade history details.</li>
+                    <li class="cs-feature-item"><strong>System Status Monitor:</strong> Visualizes database and network latency parameters in dashboard panels.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 05 — CHALLENGES & SOLUTIONS -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">05</span>
+                <h2 class="cs-section-title">Challenges<br>&amp; Solutions</h2>
+                <span class="cs-section-subtitle">Socket Lag</span>
+            </div>
+            <div class="cs-col-content">
+                <p>High concurrent transaction traffic during busy market hours can flood WebSocket channels, causing browser memory lag and locking rendering threads.</p>
+
+                <div class="challenge-card">
+                    <div class="challenge-header">
+                        <h4 class="challenge-title">Challenge: High-Frequency Socket Floods causing UI Lag</h4>
+                    </div>
+                    <div class="challenge-body">
+                        <p>Processing hundreds of parallel transaction events per second caused the React dashboard to trigger non-stop re-renders, freezing browser threads and dropping frames.</p>
+                    </div>
+                    <div class="challenge-fix-header">
+                        <h5 class="challenge-fix-title">Fix: Event Throttling &amp; Batch-Database Commits</h5>
+                    </div>
+                    <div class="challenge-fix-body">
+                        <p>We implemented a middle-tier buffer queue. Instead of broadcasting events to clients instantly, Socket.io broadcasts aggregated state changes in 100ms batches. Similarly, database write operations are queued and committed using MongoDB `bulkWrite` execution blocks, reducing network traffic and ensuring dashboard UI updates remain smooth.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 06 — IMPACT & RESULTS -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">06</span>
+                <h2 class="cs-section-title">Impact &amp;<br>Results</h2>
+                <span class="cs-section-subtitle">Trade Audits</span>
+            </div>
+            <div class="cs-col-content">
+                <p>The updated architecture handles high-frequency traffic periods with minimal latency and high resource stability.</p>
+
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-stat">&lt;100ms</div>
+                        <div class="result-lbl">UI State Synchronization Delay</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-stat">1.5k+</div>
+                        <div class="result-lbl">Transactions Processed / Minute</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-stat">0</div>
+                        <div class="result-lbl">Write Failures Recorded</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="case-study-footer">
+        <h2 class="cs-section-title">Explore More Projects</h2>
+        <div class="footer-btn-wrap" style="display: flex; gap: 1.5rem; justify-content: center; align-items: center; flex-wrap: wrap;">
+            <a href="ami-wellness.html" class="btn btn--ghost hover-target">Next Project: Ami Wellness &rarr;</a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/cursor.js" defer></script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/animations.js" defer></script>
+    <script src="../js/case-study.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Analyzer | Developer Insights Analytics Tool</title>
+    <meta name="description" content="Case study of GitHub Analyzer — a MERN platform generating profile insights, repository statistics, and activity analytics.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+
+    <!-- GSAP + ScrollTrigger + Lenis -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer></script>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body class="case-study-body">
+    <!-- Fullscreen Transition Overlay -->
+    <div class="transition-overlay"></div>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Navigation -->
+    <header class="case-study-nav">
+        <a href="../portfolio.html#work" class="back-to-portfolio hover-target">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Back to Portfolio
+        </a>
+    </header>
+
+    <!-- 01 — HERO SECTION -->
+    <section class="case-study-hero">
+        <div class="case-study-hero-inner">
+            <span class="case-study-hero-tag">MERN + API Analytics</span>
+            <h1 class="case-study-hero-title">GitHub Analyzer</h1>
+            <p class="case-study-hero-subtitle">MERN Developer Insights Profile &amp; Repository Analyzer</p>
+            
+            <div class="case-study-meta-grid">
+                <div class="case-study-meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">Full Stack Architect</span>
+                </div>
+                <div class="case-study-meta-item">
+                    <span class="meta-label">Stack</span>
+                    <span class="meta-value">MERN, GitHub REST APIs</span>
+                </div>
+                <div class="case-study-meta-item">
+                    <span class="meta-label">Duration</span>
+                    <span class="meta-value">1 Month</span>
+                </div>
+                </div>
+
+            <!-- Hero Visual Showcase -->
+            <div class="case-study-hero-visual">
+                <div class="fp-visual-placeholder fp-visual--finflow">
+                    <div class="fp-mock-frame">
+                        <div class="fp-mock-bar"><span class="fp-mock-dot fp-mock-dot--r"></span><span class="fp-mock-dot fp-mock-dot--y"></span><span class="fp-mock-dot fp-mock-dot--g"></span></div>
+                        <div class="fp-mock-body">
+                            <div class="fp-mock-line fp-mock-line--accent"></div>
+                            <div class="fp-mock-line fp-mock-line--long"></div>
+                            <div class="fp-mock-line fp-mock-line--medium"></div>
+                            <div class="fp-mock-line fp-mock-line--short"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 02 — WHY IT EXISTS -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">02</span>
+                <h2 class="cs-section-title">Why It<br>Exists</h2>
+                <span class="cs-section-subtitle">Developer Profile Visuals</span>
+            </div>
+            <div class="cs-col-content">
+                <p>GitHub profiles contain dense history lists: thousands of commits, repository arrays, language tags, and PR records. However, raw JSON lists are hard to evaluate quickly. Technical recruiters and team leads need direct visual profiles showing developer strengths, language ratios, and repository-level health metrics.</p>
+                <p>GitHub Analyzer compiles unstructured user data into a clean portfolio dashboard. It aggregates commit timelines, measures language usage distributions, and highlights repository activity logs in visual widgets.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 03 — THE SYSTEM -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">03</span>
+                <h2 class="cs-section-title">The<br>System</h2>
+                <span class="cs-section-subtitle">Aggregation flow</span>
+            </div>
+            <div class="cs-col-content">
+                <p>Queries process securely through Express routes, requesting data from GitHub REST APIs before caching results locally in MongoDB to minimize query latency.</p>
+                
+                <div class="diagram-container">
+                    <div class="diagram-node">
+                        <span class="node-num">01</span>
+                        <h4 class="node-title">Search Input</h4>
+                        <p class="node-desc">User queries a profile name</p>
+                    </div>
+                    <span class="diagram-arrow">&rarr;</span>
+                    <div class="diagram-node">
+                        <span class="node-num">02</span>
+                        <h4 class="node-title">API Routing</h4>
+                        <p class="node-desc">Express checks MongoDB Cache</p>
+                    </div>
+                    <span class="diagram-arrow">&rarr;</span>
+                    <div class="diagram-node">
+                        <span class="node-num">03</span>
+                        <h4 class="node-title">GitHub API</h4>
+                        <p class="node-desc">Fetch fresh JSON logs if missed</p>
+                    </div>
+                    <span class="diagram-arrow">&rarr;</span>
+                    <div class="diagram-node">
+                        <span class="node-num">04</span>
+                        <h4 class="node-title">Stats Engine</h4>
+                        <p class="node-desc">Format timelines &amp; chart states</p>
+                    </div>
+                </div>
+
+                <p>Visual chart libraries render these summaries directly in React dashboard pages, enabling recruiters to filter results dynamically.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 04 — KEY FEATURES -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">04</span>
+                <h2 class="cs-section-title">Key<br>Features</h2>
+                <span class="cs-section-subtitle">Visual Insights</span>
+            </div>
+            <div class="cs-col-content">
+                <p>Equipped with analytical charting widgets to present development metrics clearly.</p>
+                
+                <ul class="cs-features-list">
+                    <li class="cs-feature-item"><strong>Developer Timelines:</strong> Plots user commit rates, PR rates, and issue distributions over multiple years.</li>
+                    <li class="cs-feature-item"><strong>Language Distribution:</strong> Aggregates byte-sizes of file headers across repositories to calculate exact skill matrices.</li>
+                    <li class="cs-feature-item"><strong>Repository Health:</strong> Highlights active branches, fork counts, and star indexes in a clean visual table.</li>
+                    <li class="cs-feature-item"><strong>MERN Dashboard:</strong> Fast profile lookup with state persistence and historic search trackers.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 05 — CHALLENGES & SOLUTIONS -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">05</span>
+                <h2 class="cs-section-title">Challenges<br>&amp; Solutions</h2>
+                <span class="cs-section-subtitle">API Limits</span>
+            </div>
+            <div class="cs-col-content">
+                <p>GitHub enforces strict rate limits on API requests, which easily block systems under parallel lookup demands.</p>
+
+                <div class="challenge-card">
+                    <div class="challenge-header">
+                        <h4 class="challenge-title">Challenge: GitHub API Rate Limiting Blocks</h4>
+                    </div>
+                    <div class="challenge-body">
+                        <p>Loading multiple repo stats requests 60+ API calls per query, triggering rate limitations and freezing dashboard operations for subsequent search requests.</p>
+                    </div>
+                    <div class="challenge-fix-header">
+                        <h5 class="challenge-fix-title">Fix: Database Caching Layers &amp; TTL Index Expiration</h5>
+                    </div>
+                    <div class="challenge-fix-body">
+                        <p>We designed a MongoDB caching wrapper in the Express server. When a profile lookup is requested, the system queries local collections first. If found, it serves cached data in sub-milliseconds, bypassing external calls. We set up MongoDB Time-To-Live (TTL) index models that automatically expire records after 24 hours, ensuring profile updates are regularly synced without hitting external limits.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 06 — IMPACT & RESULTS -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">06</span>
+                <h2 class="cs-section-title">Impact &amp;<br>Results</h2>
+                <span class="cs-section-subtitle">Core Metrics</span>
+            </div>
+            <div class="cs-col-content">
+                <p>The resulting search architecture provides rapid dashboard results with stable server runtimes.</p>
+
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-stat">98%</div>
+                        <div class="result-lbl">MongoDB Cache Hit Rate</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-stat">&lt;500ms</div>
+                        <div class="result-lbl">Profile Lookup Loading</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-stat">0</div>
+                        <div class="result-lbl">Rate Limit Blockages Recorded</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="case-study-footer">
+        <h2 class="cs-section-title">Explore More Projects</h2>
+        <div class="footer-btn-wrap" style="display: flex; gap: 1.5rem; justify-content: center; align-items: center; flex-wrap: wrap;">
+            <a href="tradeflow.html" class="btn btn--ghost hover-target">Next Project: TradeFlow &rarr;</a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/cursor.js" defer></script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/animations.js" defer></script>
+    <script src="../js/case-study.js" defer></script>
+</body>
+</html>

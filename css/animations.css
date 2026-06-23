@@ -1,0 +1,156 @@
+/* ============================================
+   PORTFOLIO ANIMATIONS & REVEALS
+   ============================================ */
+
+/* Reveal animation utility */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    will-change: transform, opacity;
+}
+
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity var(--duration-base) var(--ease-out-expo),
+                transform var(--duration-base) var(--ease-out-expo);
+}
+
+/* Custom Keyframes */
+@keyframes ring-rotate {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes scroll-line {
+    0%, 100% { transform: scaleY(0.5); opacity: 0.3; }
+    50% { transform: scaleY(1); opacity: 1; }
+}
+
+@keyframes gold-sweep-anim {
+    0% { background-position: 150% 0; }
+    100% { background-position: -50% 0; }
+}
+
+/* Cinematic Transitions */
+.transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--void);
+    z-index: 9999;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.8s cubic-bezier(0.85, 0, 0.15, 1);
+    pointer-events: none;
+}
+
+.transition-overlay.active {
+    transform: scaleY(1);
+    pointer-events: all;
+    transform-origin: top;
+}
+
+.transition-overlay.exit {
+    transform: scaleY(0);
+    transform-origin: bottom;
+    pointer-events: none;
+}
+
+/* Project Card Hover Animations */
+.featured-project {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fp-visual {
+    overflow: hidden;
+    position: relative;
+}
+
+.fp-visual-img {
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+}
+
+.featured-project:hover .fp-visual-img {
+    transform: scale(1.03); /* Subtle zoom */
+}
+
+.featured-project:hover .fp-title {
+    transform: translateY(-4px);
+    transition: transform 0.4s var(--ease-out-expo);
+}
+
+/* Gold Accent Underline Growth on Project Actions */
+.view-case-study, .view-case-study-github, .view-case-study-live {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--cream-dim);
+    transition: color 0.4s ease;
+    padding-bottom: 0.3rem;
+}
+
+.view-case-study::after, .view-case-study-github::after, .view-case-study-live::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--gold);
+    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.view-case-study:hover, .view-case-study-github:hover, .view-case-study-live:hover {
+    color: var(--cream);
+}
+
+.view-case-study:hover::after, .view-case-study-github:hover::after, .view-case-study-live:hover::after {
+    width: 100%;
+}
+
+.view-case-study .arrow-icon, .view-case-study-github .arrow-icon, .view-case-study-live .arrow-icon {
+    font-size: 0.85rem;
+    display: inline-block;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+    opacity: 0.7;
+}
+
+.view-case-study:hover .arrow-icon, .view-case-study-github:hover .arrow-icon, .view-case-study-live:hover .arrow-icon {
+    transform: translate(3px, -3px);
+    opacity: 1;
+}
+
+/* Pulsing Live Dot */
+.live-dot-pulse {
+    width: 6px;
+    height: 6px;
+    background-color: #10b981;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
+
+.live-dot-pulse::after {
+    content: '';
+    position: absolute;
+    top: -3px; left: -3px;
+    width: 12px; height: 12px;
+    border: 1px solid rgba(16, 185, 129, 0.5);
+    border-radius: 50%;
+    animation: live-pulse 1.6s infinite ease-out;
+}
+
+@keyframes live-pulse {
+    0% { transform: scale(0.5); opacity: 1; }
+    100% { transform: scale(1.8); opacity: 0; }
+}

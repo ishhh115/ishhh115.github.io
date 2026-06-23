@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BankOS | Concurrency Systems & Transaction Core</title>
+    <meta name="description" content="Case study of BankOS — a concurrent transactional ledger core in C utilizing POSIX threads, lock-ordering deadlock prevention, and semaphores.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+
+    <!-- GSAP + ScrollTrigger + Lenis -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer></script>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body class="case-study-body">
+    <!-- Fullscreen Transition Overlay -->
+    <div class="transition-overlay"></div>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Navigation -->
+    <header class="case-study-nav">
+        <a href="../portfolio.html#work" class="back-to-portfolio hover-target">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Back to Portfolio
+        </a>
+    </header>
+
+    <!-- 01 — HERO SECTION -->
+    <section class="case-study-hero">
+        <div class="case-study-hero-inner">
+            <span class="case-study-hero-tag">Systems &amp; Concurrency</span>
+            <h1 class="case-study-hero-title">BankOS</h1>
+            <p class="case-study-hero-subtitle">Concurrent banking transaction core written in pure C</p>
+            
+            <div class="case-study-meta-grid">
+                <div class="case-study-meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">Systems Engineer</span>
+                </div>
+                <div class="case-study-meta-item">
+                    <span class="meta-label">Stack</span>
+                    <span class="meta-value">C, POSIX Threads, Mutex locks, Semaphores, Banker's Algorithm</span>
+                </div>
+                <div class="case-study-meta-item">
+                    <span class="meta-label">Duration</span>
+                    <span class="meta-value">1 Month</span>
+                </div>
+                <div class="case-study-meta-item">
+                    <span class="meta-label">OS Environment</span>
+                    <span class="meta-value">Linux / Unix Systems</span>
+                </div>
+            </div>
+
+            <!-- Hero Visual Showcase -->
+            <div class="case-study-hero-visual">
+                <div class="fp-visual-placeholder fp-visual--bankos">
+                    <div class="fp-mock-frame">
+                        <div class="fp-mock-bar"><span class="fp-mock-dot fp-mock-dot--r"></span><span class="fp-mock-dot fp-mock-dot--y"></span><span class="fp-mock-dot fp-mock-dot--g"></span></div>
+                        <div class="fp-mock-body">
+                            <img src="../bankos.png" class="fp-mock-screenshot" alt="BankOS C Code screenshot">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 02 — PRODUCT VISION -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">02</span>
+                <h2 class="cs-section-title">Product<br>Vision</h2>
+                <span class="cs-section-subtitle">Concurrency Demands</span>
+            </div>
+            <div class="cs-col-content">
+                <p>Multi-threaded banking system in C implementing mutex locks with lock-ordering protocol, reader-writer locks for read-heavy access, and semaphore-based teller throttling — 5 resource-bounded tellers servicing 20+ concurrent customers across 10 accounts with a 100-slot transaction queue. Deadlock prevention via ordered lock acquisition; Banker's Algorithm validates safe resource allocation across 10 threads and 3 resource types.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 03 — THE SYSTEM -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">03</span>
+                <h2 class="cs-section-title">The<br>System</h2>
+                <span class="cs-section-subtitle">Pthreads &amp; Locking</span>
+            </div>
+            <div class="cs-col-content">
+                <p>The system splits workload execution into a pool of pre-allocated teller threads. Jobs are queued and pulled in a FIFO order, controlled by counting semaphores and mutex locks protecting individual account models.</p>
+                
+                <div class="diagram-container">
+                    <div class="diagram-node">
+                        <span class="node-num">01</span>
+                        <h4 class="node-title">Transfers Queue</h4>
+                        <p class="node-desc">Circular transaction queue buffer</p>
+                    </div>
+                    <span class="diagram-arrow">&rarr;</span>
+                    <div class="diagram-node">
+                        <span class="node-num">02</span>
+                        <h4 class="node-title">Thread Pool</h4>
+                        <p class="node-desc">Teller threads matching CPU cores</p>
+                    </div>
+                    <span class="diagram-arrow">&rarr;</span>
+                    <div class="diagram-node">
+                        <span class="node-num">03</span>
+                        <h4 class="node-title">Semaphores</h4>
+                        <p class="node-desc">Throttling queue throughput</p>
+                    </div>
+                    <span class="diagram-arrow">&rarr;</span>
+                    <div class="diagram-node">
+                        <span class="node-num">04</span>
+                        <h4 class="node-title">Account Locks</h4>
+                        <p class="node-desc">POSIX mutex-secured database entries</p>
+                    </div>
+                </div>
+
+                <p>Lock allocation checks are run on every transfer. If a transfer is determined to risk deadlock states, resource parameters are adjusted dynamically to guarantee system safety.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 04 — KEY FEATURES -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">04</span>
+                <h2 class="cs-section-title">Key<br>Features</h2>
+                <span class="cs-section-subtitle">Concurrency Design</span>
+            </div>
+            <div class="cs-col-content">
+                <ul class="cs-features-list">
+                    <li class="cs-feature-item"><strong>Mutex Lock Consistency:</strong> Mutex locks with ordered lock acquisition preventing race conditions and ensuring 100% atomic transaction consistency during concurrent operations.</li>
+                    <li class="cs-feature-item"><strong>Producer-Consumer Pipeline:</strong> Transaction pipelines using circular buffers, condition variables, and real-time dashboard with live queue monitoring.</li>
+                    <li class="cs-feature-item"><strong>Banker's Algorithm Core:</strong> Banker's Algorithm implementation detecting safe states across 10 threads and 3 resource types, computing safe execution sequences during bidirectional fund transfers.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 05 — CHALLENGES & SOLUTIONS -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">05</span>
+                <h2 class="cs-section-title">Challenges<br>&amp; Solutions</h2>
+                <span class="cs-section-subtitle">Thread Safety</span>
+            </div>
+            <div class="cs-col-content">
+                <p>Managing lock allocation across multiple account nodes risks severe deadlock bugs where threads wait on circular resources indefinitely.</p>
+
+                <div class="challenge-card">
+                    <div class="challenge-header">
+                        <h4 class="challenge-title">Challenge: Circular Deadlocks during Simultaneous Mutual Transfers</h4>
+                    </div>
+                    <div class="challenge-body">
+                        <p>If Thread 1 locks Account A and tries to lock B (for A -> B), while Thread 2 locks Account B and tries to lock A (for B -> A), the threads enter a circular dependency, freezing the transaction core permanently.</p>
+                    </div>
+                    <div class="challenge-fix-header">
+                        <h5 class="challenge-fix-title">Fix: Strict Lock-Ordering &amp; Banker's Algorithm Allocation</h5>
+                    </div>
+                    <div class="challenge-fix-body">
+                        <p>We implemented a strict lock acquisition rule: locks are always acquired in ascending order of Account IDs (e.g. if a thread needs to transfer between A and B, it must always lock the smaller ID first, regardless of transaction direction). Additionally, we modeled a Banker's Algorithm allocation validator to analyze multi-account lock demands in parallel, ensuring circular dependencies can never form in the execution pool.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 06 — TECHNICAL ACHIEVEMENTS -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">06</span>
+                <h2 class="cs-section-title">Technical<br>Achievements</h2>
+                <span class="cs-section-subtitle">Stress Testing</span>
+            </div>
+            <div class="cs-col-content">
+                <ul class="cs-features-list" style="margin-bottom: 3rem;">
+                    <li class="cs-feature-item">Implemented mutex locks with ordered lock-acquisition protocol eliminating race conditions and ensuring atomic transactions across concurrent account operations.</li>
+                    <li class="cs-feature-item">Designed semaphore-based teller throttling system managing bounded resource pool (5 tellers) from 20+ concurrent customer threads using counting semaphores.</li>
+                    <li class="cs-feature-item">Engineered producer-consumer pipeline using circular buffers and pthread condition variables for thread synchronization and bounded queue management.</li>
+                    <li class="cs-feature-item">Integrated Banker's Algorithm for safe resource allocation, preventing circular-wait deadlocks in multi-resource environments.</li>
+                </ul>
+
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-stat">10k+</div>
+                        <div class="result-lbl">Transactions Per Second</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-stat">0</div>
+                        <div class="result-lbl">Deadlocks Formed</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-stat">100%</div>
+                        <div class="result-lbl">Consistency Audits Passed</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="case-study-footer">
+        <h2 class="cs-section-title">Explore More Projects</h2>
+        <div class="footer-btn-wrap">
+            <a href="mindme.html" class="btn btn--primary hover-target">Next Project: MindMe &rarr;</a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/cursor.js" defer></script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/animations.js" defer></script>
+    <script src="../js/case-study.js" defer></script>
+</body>
+</html>

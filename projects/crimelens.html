@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrimeLens | Geospatial Safety &amp; Machine Learning Analytics</title>
+    <meta name="description" content="Case study of CrimeLens — a Python-based geospatial safety analysis tool trained on historical NCRB datasets with Scikit-learn Random Forest.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+
+    <!-- GSAP + ScrollTrigger + Lenis -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer></script>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body class="case-study-body">
+    <!-- Fullscreen Transition Overlay -->
+    <div class="transition-overlay"></div>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Navigation -->
+    <header class="case-study-nav">
+        <a href="../portfolio.html#work" class="back-to-portfolio hover-target">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Back to Portfolio
+        </a>
+    </header>
+
+    <!-- 01 — HERO SECTION -->
+    <section class="case-study-hero">
+        <div class="case-study-hero-inner">
+            <span class="case-study-hero-tag">Machine Learning &amp; GIS</span>
+            <h1 class="case-study-hero-title">CrimeLens</h1>
+            <p class="case-study-hero-subtitle">Geospatial crime mapping and risk index forecasting trained on NCRB datasets</p>
+            
+            <div class="case-study-meta-grid">
+                <div class="case-study-meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">Data Scientist</span>
+                </div>
+                <div class="case-study-meta-item">
+                    <span class="meta-label">Stack</span>
+                    <span class="meta-value">Python, Scikit-learn, Pandas, NumPy, Flask, Folium, Seaborn, HTML/CSS, JavaScript</span>
+                </div>
+                <div class="case-study-meta-item">
+                    <span class="meta-label">Duration</span>
+                    <span class="meta-value">2 Months</span>
+                </div>
+                </div>
+
+            <!-- Hero Visual Showcase -->
+            <div class="case-study-hero-visual">
+                <div class="fp-visual-placeholder fp-visual--scholar">
+                    <div class="fp-mock-frame">
+                        <div class="fp-mock-bar"><span class="fp-mock-dot fp-mock-dot--r"></span><span class="fp-mock-dot fp-mock-dot--y"></span><span class="fp-mock-dot fp-mock-dot--g"></span></div>
+                        <div class="fp-mock-body">
+                            <img src="../crimelens.png" class="fp-mock-screenshot" alt="CrimeLens screenshot">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 02 — PRODUCT VISION -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">02</span>
+                <h2 class="cs-section-title">Product<br>Vision</h2>
+                <span class="cs-section-subtitle">Objective Safety Analytics</span>
+            </div>
+            <div class="cs-col-content">
+                <p>ML-powered crime analytics platform developed to predict city-level crime risk using NCRB datasets (2018–2022). Engineered domain-specific crime metrics — crime rate per lakh, violent crime ratio, year-over-year change, and solve rate — and trained a Random Forest classifier achieving 83% accuracy on city risk classification. Built interactive geographic crime visualizations and a Flask REST API for risk prediction and multi-city comparative analysis.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 03 — THE SYSTEM -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">03</span>
+                <h2 class="cs-section-title">The<br>System</h2>
+                <span class="cs-section-subtitle">Flask &amp; Mapping Pipeline</span>
+            </div>
+            <div class="cs-col-content">
+                <p>The platform executes data preparation pipelines in Python, training Random Forest classifiers to predict safety indexes, serving coordinates to interactive maps via Flask endpoints.</p>
+                
+                <div class="diagram-container">
+                    <div class="diagram-node">
+                        <span class="node-num">01</span>
+                        <h4 class="node-title">NCRB Dataset</h4>
+                        <p class="node-desc">Unified historical statistics files</p>
+                    </div>
+                    <span class="diagram-arrow">&rarr;</span>
+                    <div class="diagram-node">
+                        <span class="node-num">02</span>
+                        <h4 class="node-title">Random Forest</h4>
+                        <p class="node-desc">Risk level classifier training</p>
+                    </div>
+                    <span class="diagram-arrow">&rarr;</span>
+                    <div class="diagram-node">
+                        <span class="node-num">03</span>
+                        <h4 class="node-title">Flask Server</h4>
+                        <p class="node-desc">Predictive API routing JSON</p>
+                    </div>
+                    <span class="diagram-arrow">&rarr;</span>
+                    <div class="diagram-node">
+                        <span class="node-num">04</span>
+                        <h4 class="node-title">Folium Map</h4>
+                        <p class="node-desc">Interactive geospatial overlay</p>
+                    </div>
+                </div>
+
+                <p>The frontend loads interactive Folium layers directly in browser viewports, rendering choropleth maps reflecting localized crime indexes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 04 — KEY FEATURES -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">04</span>
+                <h2 class="cs-section-title">Key<br>Features</h2>
+                <span class="cs-section-subtitle">Analytical Tools</span>
+            </div>
+            <div class="cs-col-content">
+                <ul class="cs-features-list">
+                    <li class="cs-feature-item"><strong>Random Forest Risk Engine:</strong> Engineered crime indicators (violent-crime ratio, crime rate normalization, YoY change) to classify location-level risk.</li>
+                    <li class="cs-feature-item"><strong>Integrated Anomaly Detection:</strong> Flags statistically unusual crime spikes/drops against historical baselines for early warning.</li>
+                    <li class="cs-feature-item"><strong>Actionable Decision Layer:</strong> Combines prediction confidence, top model drivers, and API-powered comparative insights for location-specific interventions.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 05 — CHALLENGES & SOLUTIONS -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">05</span>
+                <h2 class="cs-section-title">Challenges<br>&amp; Solutions</h2>
+                <span class="cs-section-subtitle">Data Normalization</span>
+            </div>
+            <div class="cs-col-content">
+                <p>Historical regional datasets frequently contain missing cells, and raw counts bias risk forecasts towards high-population states.</p>
+
+                <div class="challenge-card">
+                    <div class="challenge-header">
+                        <h4 class="challenge-title">Challenge: Missing Dataset records &amp; Demographic Skews</h4>
+                    </div>
+                    <div class="challenge-body">
+                        <p>Raw crime sums automatically flagged populous states (like Uttar Pradesh) as high-risk, failing to reflect per-capita realities. Additionally, empty cells across years blocked model training algorithms.</p>
+                    </div>
+                    <div class="challenge-fix-header">
+                        <h5 class="challenge-fix-title">Fix: KNN Imputation &amp; Per-Capita Rate Normalization</h5>
+                    </div>
+                    <div class="challenge-fix-body">
+                        <p>We designed a pre-processing pipeline using Scikit-learn. Missing historical data cells are imputed using K-Nearest Neighbors algorithms based on neighboring state indexes. To correct demographic skews, crime numbers are normalized per 100,000 citizens. We also weighted crimes by violent severity coefficients rather than counting all offences equally, delivering fair, per-capita risk measurements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 06 — TECHNICAL ACHIEVEMENTS -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">06</span>
+                <h2 class="cs-section-title">Technical<br>Achievements</h2>
+                <span class="cs-section-subtitle">Model Accuracy</span>
+            </div>
+            <div class="cs-col-content">
+                <ul class="cs-features-list" style="margin-bottom: 3rem;">
+                    <li class="cs-feature-item">Processed and standardized multi-year NCRB crime data across 19+ Indian cities (2018–2022) into a clean ML-ready pipeline.</li>
+                    <li class="cs-feature-item">Engineered domain-specific features for crime rate normalization and risk modeling — violent crime ratio, YoY change, and solve rate.</li>
+                    <li class="cs-feature-item">Trained and validated Random Forest classifier with 83% accuracy on city-level crime risk classification.</li>
+                    <li class="cs-feature-item">Deployed Flask REST API with dedicated endpoints for risk prediction, city lookup, and multi-city comparison.</li>
+                    <li class="cs-feature-item">Built interactive crime visualizations: India choropleth maps, seasonal crime heatmaps, and police efficiency trend dashboards.</li>
+                </ul>
+
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-stat">83%</div>
+                        <div class="result-lbl">Model Prediction Accuracy</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-stat">&lt;1.2s</div>
+                        <div class="result-lbl">Interactive Map Load Time</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-stat">19+</div>
+                        <div class="result-lbl">Cities Covered</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="case-study-footer">
+        <h2 class="cs-section-title">Explore More Projects</h2>
+        <div class="footer-btn-wrap" style="display: flex; gap: 1.5rem; justify-content: center; align-items: center; flex-wrap: wrap;">
+            <a href="finflow.html" class="btn btn--ghost hover-target">Next Project: FinFlow &rarr;</a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/cursor.js" defer></script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/animations.js" defer></script>
+    <script src="../js/case-study.js" defer></script>
+</body>
+</html>

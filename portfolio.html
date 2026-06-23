@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isha Parveen | AI Engineer & Full Stack Developer</title>
+    <meta name="description" content="Portfolio of Isha Parveen — AI Engineer, Full Stack Developer, and Creative Builder. Building AI-powered systems that solve real-world problems.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+
+    <!-- GSAP + ScrollTrigger + Lenis -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer></script>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/case-study.css">
+</head>
+<body>
+    <!-- Fullscreen Transition Overlay -->
+    <div class="transition-overlay"></div>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobile-overlay">
+        <button class="mobile-overlay-close" id="mobile-close">&times;</button>
+        <nav class="mobile-nav-links">
+            <a href="#about" class="mobile-nav-link">About</a>
+            <a href="#skills" class="mobile-nav-link">Skills</a>
+            <a href="#experience" class="mobile-nav-link">Experience</a>
+            <a href="#work" class="mobile-nav-link">Work</a>
+            <a href="#contact" class="mobile-nav-link">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Navigation -->
+    <header class="nav visible" id="main-nav">
+        <a href="#intro-scene" class="nav-logo hover-target">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0L14.8 9.2L24 12L14.8 14.8L12 24L9.2 14.8L0 12L9.2 9.2Z"/></svg>
+            Isha Parveen
+        </a>
+        <div class="nav-links-wrap">
+            <nav class="nav-links">
+                <a href="#about" class="nav-link hover-target">About</a>
+                <a href="#skills" class="nav-link hover-target">Skills</a>
+                <a href="#experience" class="nav-link hover-target">Experience</a>
+                <a href="#work" class="nav-link hover-target">Work</a>
+                <a href="#contact" class="nav-cta hover-target">+ Get in touch</a>
+            </nav>
+            <div class="nav-divider"></div>
+        </div>
+        <button class="nav-hamburger hover-target" id="nav-hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <!-- ============================
+         CINEMATIC INTRO SCENE
+         ============================ -->
+    <section class="intro-scene" id="intro-scene">
+        <div class="intro-inner">
+            <!-- Ambient orbs -->
+            <div class="intro-orb intro-orb--1"></div>
+            <div class="intro-orb intro-orb--2"></div>
+
+            <!-- Atmospheric editorial photo layer -->
+            <div class="intro-atmosphere" id="intro-atmosphere">
+                <img class="intro-atmosphere-img" src="isha-hero.jpg" alt="" aria-hidden="true">
+            </div>
+
+            <!-- Content overlay container -->
+            <div class="intro-content-container">
+                <!-- Concentric circles decoration -->
+                <div class="intro-decoration">
+                    <div class="intro-dot"></div>
+                    <div class="intro-circle intro-circle--1"></div>
+                    <div class="intro-circle intro-circle--2"></div>
+                </div>
+
+                <!-- Editorial title -->
+                <h1 class="intro-title">
+                    <span class="intro-title-line intro-title-line--first"><span>ISHA</span></span>
+                    <span class="intro-title-line intro-title-line--last"><span>PARVEEN</span></span>
+                </h1>
+
+
+            </div>
+
+            <!-- Fade overlay for smooth scroll-fade transition -->
+            <div class="intro-fade-overlay"></div>
+
+            <!-- Right-side progress bar -->
+            <div class="intro-progress-bar">
+                <span class="intro-progress-num">01</span>
+                <div class="intro-progress-line-wrap">
+                    <div class="intro-progress-line-fill"></div>
+                </div>
+                <span class="intro-progress-num">05</span>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ============================
+         SCENE 2 — ABOUT
+         ============================ -->
+    <section class="section section--cream section-padding" id="about">
+        <!-- Background Watermarks -->
+        <div class="about-watermark about-watermark--build">BUILD</div>
+        <div class="about-watermark about-watermark--create">CREATE</div>
+        <div class="about-watermark about-watermark--impact">IMPACT</div>
+
+        <div class="content-wrap">
+            <div class="about-grid">
+                <!-- Left Column: Story -->
+                <div class="about-story-col">
+                    <span class="about-label">ABOUT</span>
+                    
+                    <h2 class="about-editorial-heading">
+                        <span class="heading-line">I build <span class="gold-sweep">products</span></span>
+                        <span class="heading-line">where <span class="gold-sweep">AI</span>,</span>
+                        <span class="heading-line"><span class="gold-sweep">engineering</span>,</span>
+                        <span class="heading-line">and <span class="gold-sweep">human behavior</span></span>
+                        <span class="heading-line">intersect.</span>
+                    </h2>
+                    
+                    <div class="about-editorial-line">
+                        <div class="line-path"></div>
+                        <div class="line-dot"></div>
+                    </div>
+
+                    <div class="about-editorial-paragraphs">
+                        <p>I'm driven by the idea that technology should solve real problems, not just demonstrate technical complexity.</p>
+                        <p>My work spans AI, full-stack development, and intelligent systems designed to create meaningful impact.</p>
+                    </div>
+
+                    <div class="about-social-links">
+                        <a href="https://www.linkedin.com/in/isha-parveen-8b82b3307" target="_blank" class="about-editorial-link hover-target">
+                            LinkedIn <span class="link-arrow">↗</span>
+                        </a>
+                        <a href="https://github.com/ishhh115" target="_blank" class="about-editorial-link hover-target">
+                            GitHub <span class="link-arrow">↗</span>
+                        </a>
+                        <a href="https://drive.google.com/file/d/1HfilE9JDAHnpgglg0G23RsgK-qWGnvSh/view?usp=sharing" target="_blank" class="about-editorial-link hover-target">
+                            Resume <span class="link-arrow">↗</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Portrait Card -->
+                <div class="about-portrait-col">
+                    <!-- Large circular graphics in background -->
+                    <div class="about-circle-container">
+                        <svg class="about-circle-svg" viewBox="0 0 200 200">
+                            <circle class="about-circle-orbit" cx="100" cy="100" r="92" fill="none" stroke="rgba(204,162,80,0.18)" stroke-width="0.75" />
+                            <g class="about-circle-satellite">
+                                <circle class="about-circle-dot" cx="100" cy="8" r="3" fill="var(--gold)" />
+                            </g>
+                        </svg>
+                        <!-- Concentric decorator circles at bottom-left of the main circle -->
+                        <div class="about-circle-decorator">
+                            <div class="dec-dot"></div>
+                            <div class="dec-circle"></div>
+                        </div>
+                    </div>
+
+                    <!-- Nested wraps to separate exit, float, reveal, and 3D tilt animations -->
+                    <div class="about-portrait-exit-wrap">
+                        <div class="about-portrait-floating-wrap">
+                            <div class="about-portrait-reveal-wrap">
+                                <div class="about-portrait-card hover-target">
+                                    <!-- Inner image container for cropping & grain overlay -->
+                                    <div class="about-portrait-img-container">
+                                        <img class="about-portrait-img-redesign" src="isha-about.jpg" alt="Isha Parveen">
+                                    </div>
+                                    <!-- Floating Editorial Outline Frame -->
+                                    <div class="about-portrait-frame"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Option A: Large signature-style quote -->
+                    <div class="about-signature-quote-wrap">
+                        <svg class="quote-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0L14.8 9.2L24 12L14.8 14.8L12 24L9.2 14.8L0 12L9.2 9.2Z"/></svg>
+                        <p class="about-signature-quote-text">
+                            Turning curiosity<br>
+                            into <span class="gold-sweep gold-word">products</span> &mdash;<br>
+                            and ideas<br>
+                            into <span class="gold-sweep gold-word">impact</span>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================
+         SCENE 3 — SKILLS
+         ============================ -->
+    <section class="section section--forest section-padding" id="skills">
+        <!-- Ambient atmosphere background -->
+        <div class="skills-atmosphere">
+            <svg class="skills-atmos-orbit" viewBox="0 0 800 800">
+                <circle cx="400" cy="400" r="320" fill="none" stroke="rgba(204, 162, 80, 0.022)" stroke-width="0.75" />
+                <circle cx="400" cy="400" r="200" fill="none" stroke="rgba(16, 185, 129, 0.015)" stroke-width="0.75" stroke-dasharray="4, 12" />
+                <circle class="atmos-particle" cx="400" cy="80" r="2.5" fill="var(--gold)" opacity="0.15" />
+                <circle class="atmos-particle" cx="200" cy="400" r="2" fill="var(--terracotta)" opacity="0.12" />
+                <circle class="atmos-particle" cx="600" cy="400" r="2" fill="var(--gold)" opacity="0.12" />
+            </svg>
+            <div class="skills-atmos-glow"></div>
+        </div>
+
+        <div class="skills-inner">
+            <div class="skills-header">
+                <span class="section-label">EXPERTISE</span>
+                <h2 class="section-title reveal">Technical Expertise</h2>
+            </div>
+
+            <div class="skills-grid">
+                <!-- ML / AI -->
+                <div class="skill-card reveal">
+                    <div class="skill-card-header"><span class="skill-card-dot skill-card-dot--gold"></span><h4 class="skill-card-label">ML / AI</h4></div>
+                    <div class="skill-pills">
+                        <span class="skill-pill">Machine Learning</span><span class="skill-pill">Deep Learning</span><span class="skill-pill">NLP</span><span class="skill-pill">LLMs</span><span class="skill-pill">PyTorch</span><span class="skill-pill">Prompt Engineering</span><span class="skill-pill">Information Extraction</span><span class="skill-pill">Transformer Models</span><span class="skill-pill">Fine-Tuning</span><span class="skill-pill">Embeddings</span><span class="skill-pill">RAG Pipelines</span><span class="skill-pill">Sentence Transformers</span><span class="skill-pill">FAISS</span><span class="skill-pill">Vector Search</span><span class="skill-pill">XGBoost</span><span class="skill-pill">Ablation Studies</span><span class="skill-pill">Linear Algebra</span><span class="skill-pill">Probability</span><span class="skill-pill">Statistics</span>
+                    </div>
+                </div>
+                <!-- Backend -->
+                <div class="skill-card reveal">
+                    <div class="skill-card-header"><span class="skill-card-dot skill-card-dot--green"></span><h4 class="skill-card-label">Backend</h4></div>
+                    <div class="skill-pills">
+                        <span class="skill-pill">Node.js</span><span class="skill-pill">Express.js</span><span class="skill-pill">Flask</span><span class="skill-pill">REST APIs</span><span class="skill-pill">Authentication</span><span class="skill-pill">JWT</span><span class="skill-pill">OAuth</span><span class="skill-pill">Webhooks</span><span class="skill-pill">API Design</span><span class="skill-pill">Background Jobs</span><span class="skill-pill">Cron Systems</span><span class="skill-pill">Rate Limiting</span><span class="skill-pill">Event Driven Systems</span><span class="skill-pill">AWS SES</span><span class="skill-pill">Email Automation</span>
+                    </div>
+                </div>
+                <!-- CS Fundamentals -->
+                <div class="skill-card reveal">
+                    <div class="skill-card-header"><span class="skill-card-dot skill-card-dot--orange"></span><h4 class="skill-card-label">CS Fundamentals</h4></div>
+                    <div class="skill-pills">
+                        <span class="skill-pill">Data Structures</span><span class="skill-pill">Algorithms</span><span class="skill-pill">DSA</span><span class="skill-pill">DBMS</span><span class="skill-pill">Operating Systems</span><span class="skill-pill">Object-Oriented Design</span><span class="skill-pill">System Design</span><span class="skill-pill">Problem Solving</span><span class="skill-pill">Complexity Analysis</span>
+                    </div>
+                </div>
+                <!-- Tools & DevOps -->
+                <div class="skill-card reveal">
+                    <div class="skill-card-header"><span class="skill-card-dot skill-card-dot--purple"></span><h4 class="skill-card-label">Tools &amp; DevOps</h4></div>
+                    <div class="skill-pills">
+                        <span class="skill-pill">Git</span><span class="skill-pill">GitHub</span><span class="skill-pill">Docker</span><span class="skill-pill">Vercel</span><span class="skill-pill">Render</span><span class="skill-pill">GCP</span><span class="skill-pill">Postman</span><span class="skill-pill">Jupyter</span><span class="skill-pill">Google Colab</span>
+                    </div>
+                </div>
+                <!-- Languages -->
+                <div class="skill-card reveal">
+                    <div class="skill-card-header"><span class="skill-card-dot skill-card-dot--blue"></span><h4 class="skill-card-label">Languages</h4></div>
+                    <div class="skill-pills">
+                        <span class="skill-pill">Java</span><span class="skill-pill">C</span><span class="skill-pill">Python</span><span class="skill-pill">JavaScript (ES6+)</span><span class="skill-pill">TypeScript</span><span class="skill-pill">PHP</span>
+                    </div>
+                </div>
+                <!-- Databases -->
+                <div class="skill-card reveal">
+                    <div class="skill-card-header"><span class="skill-card-dot skill-card-dot--cyan"></span><h4 class="skill-card-label">Databases</h4></div>
+                    <div class="skill-pills">
+                        <span class="skill-pill">MongoDB</span><span class="skill-pill">MySQL</span><span class="skill-pill">PostgreSQL</span><span class="skill-pill">GROQ</span><span class="skill-pill">Sanity CMS</span><span class="skill-pill">Supabase</span>
+                    </div>
+                </div>
+                <!-- Data & Viz -->
+                <div class="skill-card reveal">
+                    <div class="skill-card-header"><span class="skill-card-dot skill-card-dot--rose"></span><h4 class="skill-card-label">Data &amp; Viz</h4></div>
+                    <div class="skill-pills">
+                        <span class="skill-pill">Scikit-learn</span><span class="skill-pill">Pandas</span><span class="skill-pill">NumPy</span><span class="skill-pill">Matplotlib</span><span class="skill-pill">Plotly</span><span class="skill-pill">Folium</span><span class="skill-pill">Seaborn</span>
+                    </div>
+                </div>
+                <!-- Frontend -->
+                <div class="skill-card reveal">
+                    <div class="skill-card-header"><span class="skill-card-dot skill-card-dot--pink"></span><h4 class="skill-card-label">Frontend</h4></div>
+                    <div class="skill-pills">
+                        <span class="skill-pill">React.js</span><span class="skill-pill">Next.js</span><span class="skill-pill">Tailwind CSS</span><span class="skill-pill">HTML5</span><span class="skill-pill">CSS3</span><span class="skill-pill">Shadcn UI</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-download reveal">
+                <a href="https://drive.google.com/file/d/1HfilE9JDAHnpgglg0G23RsgK-qWGnvSh/view?usp=sharing" target="_blank" class="btn--download hover-target">
+                    <span>Download PDF Resume</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================
+         SCENE 4 — EXPERIENCE
+         ============================ -->
+    <section class="section section--dark section-padding" id="experience">
+        <div class="content-wrap">
+            <div class="section-header">
+                <span class="section-label">WORK HISTORY</span>
+                <h2 class="section-title reveal">Experience</h2>
+            </div>
+
+            <div class="exp-layout">
+                <div class="exp-timeline">
+                    <div class="exp-item active" data-exp="0">
+                        <span class="exp-item-date">May 2026 — Present</span>
+                        <h3 class="exp-item-role">Full Stack Developer Intern</h3>
+                        <span class="exp-item-company">Luneox</span>
+                    </div>
+                    <div class="exp-item" data-exp="1">
+                        <span class="exp-item-date">May 2026 — Present</span>
+                        <h3 class="exp-item-role">Open Source Contributor</h3>
+                        <span class="exp-item-company">GSSoC</span>
+                    </div>
+                    <div class="exp-item" data-exp="2">
+                        <span class="exp-item-date">May 2025 — Nov 2025</span>
+                        <h3 class="exp-item-role">Research Intern</h3>
+                        <span class="exp-item-company">Galaxy Home Automation LLP</span>
+                    </div>
+                </div>
+
+                <div class="exp-detail">
+                    <!-- Panel 0: Luneox -->
+                    <div class="exp-panel active" data-panel="0">
+                        <h2 class="exp-panel-role">Full Stack Developer Intern</h2>
+                        <p class="exp-panel-company">Luneox &nbsp;·&nbsp; Remote &nbsp;·&nbsp; May 2026 — Present</p>
+                        <div class="exp-panel-tags"><span class="exp-tag">Next.js</span><span class="exp-tag">GPT-4o-mini</span><span class="exp-tag">Sanity CMS</span><span class="exp-tag">NextAuth</span><span class="exp-tag">Vercel Cron</span><span class="exp-tag">Whapi.Cloud</span><span class="exp-tag">AWS SES</span></div>
+                        <p class="exp-panel-about">Built MindMe, an event-driven, multi-tenant SaaS platform that converts unstructured WhatsApp conversation data into structured, trackable work items using LLM-based extraction. <a href="projects/mindme.html" class="view-case-study hover-target" style="display:inline-flex; margin-left:10px; font-size:0.8rem; vertical-align:middle;">View Case Study <span class="arrow-icon">↗</span></a></p>
+                        <p class="exp-panel-lbl">What I did</p>
+                        <ul class="exp-panel-bullets">
+                            <li><strong>Ingestion Layer:</strong> Built a webhook integration with Whapi.Cloud to receive real-time WhatsApp events (text, button replies, edits) through a single Next.js API route, with idempotent processing keyed on message ID to prevent duplicate writes on retried deliveries.</li>
+                            <li><strong>Extraction Pipeline:</strong> Designed an LLM-based task extraction pipeline on GPT-4o-mini with guardrails — confidence thresholding, duplicate-task detection, keyword-based fallback classification, and rate limiting — so noisy conversations can't flood the system with false-positive tasks.</li>
+                            <li><strong>Multi-Tenant Data Layer:</strong> Modeled Sanity CMS as the headless data store with organisation-scoped references on every document type, enforcing row-level tenant isolation at the query layer; disabled CDN reads so the dashboard always reflects live state.</li>
+                            <li><strong>Scheduling, Notifications &amp; Access Control:</strong> Implemented reminder dispatch on Vercel Cron Jobs across WhatsApp and email channels with delivery-state tracking and retries, and role-based authorization (admin/manager/member/guest) enforced server-side on every mutation.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Panel 1: GSSoC -->
+                    <div class="exp-panel" data-panel="1">
+                        <h2 class="exp-panel-role">Open Source Contributor</h2>
+                        <p class="exp-panel-company">GSSoC &nbsp;·&nbsp; Remote &nbsp;·&nbsp; May 2026 — Present</p>
+                        <div class="exp-panel-tags"><span class="exp-tag">Git</span><span class="exp-tag">GitHub</span><span class="exp-tag">Open Source</span><span class="exp-tag">Code Review</span><span class="exp-tag">Collaboration</span></div>
+                        <p class="exp-panel-about">Contributing to open-source software projects during GirlScript Summer of Code, collaborating with global developer communities to enhance codebase functionality and documentation.</p>
+                        <p class="exp-panel-lbl">What I did</p>
+                        <ul class="exp-panel-bullets">
+                            <li><strong>Feature &amp; Bug Resolution:</strong> Actively contributed to open source repositories by fixing bugs, improving documentation, and building new functional features.</li>
+                            <li><strong>Collaborative Contributions:</strong> Participated in developer discussions, code reviews, and community syncs on GitHub to ensure seamless feature merging.</li>
+                            <li><strong>Best Practices:</strong> Authored clean, modular pull requests conforming to repository linting, testing, and contribution standards.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Panel 2: Galaxy -->
+                    <div class="exp-panel" data-panel="2">
+                        <h2 class="exp-panel-role">Research Intern</h2>
+                        <p class="exp-panel-company">Galaxy Home Automation LLP &nbsp;·&nbsp; Remote &nbsp;·&nbsp; May 2025 — Nov 2025</p>
+                        <div class="exp-panel-tags"><span class="exp-tag">Python</span><span class="exp-tag">LLaMA</span><span class="exp-tag">GCP</span><span class="exp-tag">Pandas</span><span class="exp-tag">Fine-Tuning</span><span class="exp-tag">Ablation Studies</span></div>
+                        <p class="exp-panel-about">Galaxy Home Automation LLP develops intelligent residential systems, automating smart home telemetry responses using state-of-the-art machine learning models.</p>
+                        <p class="exp-panel-lbl">What I did</p>
+                        <ul class="exp-panel-bullets">
+                            <li><strong>Conversational Assistant:</strong> Fine-tuned LLaMA on a custom NCERT textbook dataset (hundreds of domain-specific examples) on GCP to build a conversational AI assistant for home automation — improving response relevance and accuracy on Indian curriculum queries over the base model.</li>
+                            <li><strong>Dataset &amp; Tuning Framework:</strong> Constructed a custom NCERT textbook dataset from scratch — collected, cleaned, and annotated hundreds of domain-specific question-answer examples using Python and Pandas — producing structured, training-ready data. Established a reproducible fine-tuning framework on GCP.</li>
+                            <li><strong>LLM Benchmarking:</strong> Led research collaboration with the team to benchmark 4+ open-source LLMs via ablation-style experiments; performed statistical evaluation of accuracy and reliability metrics, presented comparative findings, and drove final model selection.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================
+         SCENE 5 — CURRENTLY BUILDING
+         ============================ -->
+    <section class="section section--dark section-padding">
+        <div class="content-wrap">
+            <div class="section-header" style="text-align:center;">
+                <span class="section-label">RIGHT NOW</span>
+                <h2 class="section-title reveal">Currently <em>Building</em></h2>
+            </div>
+            <div class="terminal-wrap reveal">
+                <div class="terminal hover-target">
+                    <div class="terminal-bar">
+                        <div class="terminal-dots"><span class="t-dot-r"></span><span class="t-dot-y"></span><span class="t-dot-g"></span></div>
+                        <span class="terminal-label">isha@portfolio ~ status</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-row">
+                            <span class="t-arrow">&rarr;</span>
+                            <div class="t-content">
+                                <span class="t-cmd">run <span class="t-cmd-hl">dsa-practice</span> --lang java --sheet striver-a2z</span>
+                                <h3 class="t-title">Advanced DSA &amp; Algorithms</h3>
+                                <div class="t-desc-row">
+                                    <p class="t-desc">Solving DP, graphs, backtracking, greedy algorithms in Java from scratch.</p>
+                                    <div class="t-indicator"><span class="t-indicator-dot"></span></div>
+                                </div>
+                            </div>
+                            <span class="t-badge t-badge--orange">IN PROGRESS</span>
+                        </div>
+                        <div class="terminal-row">
+                            <span class="t-arrow">&rarr;</span>
+                            <div class="t-content">
+                                <span class="t-cmd">explore <span class="t-cmd-hl">genai-systems</span> --api gemini --mode agents</span>
+                                <h3 class="t-title">Generative AI Systems</h3>
+                                <p class="t-desc">Experimenting with RAG pipelines, agentic workflows, and multimodal interfaces.</p>
+                            </div>
+                            <span class="t-badge t-badge--blue">EXPLORING</span>
+                        </div>
+                        <div class="terminal-row">
+                            <span class="t-arrow">&rarr;</span>
+                            <div class="t-content">
+                                <span class="t-cmd">build <span class="t-cmd-hl">fullstack-app</span> --stack mern --deploy vercel</span>
+                                <h3 class="t-title">Production Full Stack Systems</h3>
+                                <p class="t-desc">Building scalable MERN applications with clean architecture and cloud deployment.</p>
+                            </div>
+                            <span class="t-badge t-badge--green">BUILDING</span>
+                        </div>
+                        <div class="terminal-footer">
+                            <span class="t-prompt">$</span>
+                            <span class="t-footer-text">open to opportunities</span>
+                            <span class="t-cursor"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================
+         SCENE 6 — FEATURED PROJECTS
+         ============================ -->
+    <section class="section section--dark section-padding" id="work">
+        <div class="content-wrap">
+            <div class="section-header">
+                <span class="section-label">SELECTED WORK</span>
+                <h2 class="section-title reveal">Featured <em>Projects</em></h2>
+            </div>
+
+            <div class="featured-projects">
+                <!-- PROJECT 1: ScholarSync -->
+                <div class="featured-project reveal">
+                    <div class="fp-info">
+                        <span class="fp-badge">Vector RAG Platform</span>
+                        <h3 class="fp-title">ScholarSync</h3>
+                        <p class="fp-highlights">Semantic Search &nbsp;·&nbsp; NLP &nbsp;·&nbsp; Embedding Pipelines &nbsp;·&nbsp; LLMs</p>
+                        <p class="fp-desc">A semantic discovery platform for indexing and summarizing research papers. Performs high-speed vector lookup and generates context-grounded AI literature reviews.</p>
+                        <div class="fp-tech"><span class="fp-tech-tag">Next.js</span><span class="fp-tech-tag">Python</span><span class="fp-tech-tag">FastAPI</span><span class="fp-tech-tag">SentenceTransformers</span><span class="fp-tech-tag">ChromaDB</span></div>
+                        <div class="fp-actions">
+                            <a href="projects/scholarsync.html" class="view-case-study hover-target">View Case Study <span class="arrow-icon">↗</span></a>
+                            <a href="https://github.com/ishhh115" target="_blank" class="view-case-study-github hover-target">GitHub <span class="arrow-icon">↗</span></a>
+                        </div>
+                    </div>
+                    <div class="fp-visual fp-visual--scholar hover-target">
+                        <div class="fp-visual-placeholder"></div>
+                        <div class="fp-mock-frame">
+                            <div class="fp-mock-bar"><span class="fp-mock-dot fp-mock-dot--r"></span><span class="fp-mock-dot fp-mock-dot--y"></span><span class="fp-mock-dot fp-mock-dot--g"></span></div>
+                            <div class="fp-mock-body">
+                                <img src="scholarsync.png" class="fp-mock-screenshot" alt="ScholarSync screenshot">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT 2: FinFlow -->
+                <div class="featured-project reveal">
+                    <div class="fp-info" style="order:2">
+                        <span class="fp-badge">Full-Stack MERN + AI</span>
+                        <h3 class="fp-title">FinFlow</h3>
+                        <p class="fp-highlights">Personal Finance &nbsp;·&nbsp; Expense Analytics &nbsp;·&nbsp; Gemini API &nbsp;·&nbsp; Ingestion</p>
+                        <p class="fp-desc">A complete dashboard monitoring categories, budgets, and spending trends. Employs a Gemini chatbot grounded in transaction histories to generate money habits recommendations.</p>
+                        <div class="fp-tech"><span class="fp-tech-tag">React</span><span class="fp-tech-tag">Node.js</span><span class="fp-tech-tag">Express</span><span class="fp-tech-tag">MongoDB</span><span class="fp-tech-tag">Gemini API</span></div>
+                        <div class="fp-actions">
+                            <a href="projects/finflow.html" class="view-case-study hover-target">View Case Study <span class="arrow-icon">↗</span></a>
+                            <a href="https://github.com/ishhh115" target="_blank" class="view-case-study-github hover-target">GitHub <span class="arrow-icon">↗</span></a>
+                        </div>
+                    </div>
+                    <div class="fp-visual fp-visual--finflow hover-target" style="order:1">
+                        <div class="fp-visual-placeholder"></div>
+                        <div class="fp-mock-frame">
+                            <div class="fp-mock-bar"><span class="fp-mock-dot fp-mock-dot--r"></span><span class="fp-mock-dot fp-mock-dot--y"></span><span class="fp-mock-dot fp-mock-dot--g"></span></div>
+                            <div class="fp-mock-body">
+                                <div class="fp-mock-line fp-mock-line--short" style="background: rgba(16,185,129,0.15);"></div>
+                                <div class="fp-mock-line fp-mock-line--long"></div>
+                                <div class="fp-mock-line fp-mock-line--medium"></div>
+                                <div class="fp-mock-line fp-mock-line--long"></div>
+                                <div class="fp-mock-line fp-mock-line--short"></div>
+                                <div class="fp-mock-line fp-mock-line--accent"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT 3: BankOS -->
+                <div class="featured-project reveal">
+                    <div class="fp-info">
+                        <span class="fp-badge">Concurrency Systems</span>
+                        <h3 class="fp-title">BankOS</h3>
+                        <p class="fp-highlights">Multi-Threading &nbsp;·&nbsp; Deadlock Prevention &nbsp;·&nbsp; Banker's Algorithm &nbsp;·&nbsp; POSIX</p>
+                        <p class="fp-desc">A concurrent banking core in C. MUTEX locks with strict lock-ordering prevent race conditions, and counting semaphores throttle concurrent transaction tellers.</p>
+                        <div class="fp-tech"><span class="fp-tech-tag">C</span><span class="fp-tech-tag">POSIX Threads</span><span class="fp-tech-tag">Mutex Locks</span><span class="fp-tech-tag">Semaphores</span></div>
+                        <div class="fp-actions">
+                            <a href="projects/bankos.html" class="view-case-study hover-target">View Case Study <span class="arrow-icon">↗</span></a>
+                            <a href="https://github.com/ishhh115/BankOS" target="_blank" class="view-case-study-github hover-target">GitHub <span class="arrow-icon">↗</span></a>
+                        </div>
+                    </div>
+                    <div class="fp-visual fp-visual--bankos hover-target">
+                        <div class="fp-visual-placeholder"></div>
+                        <div class="fp-mock-frame">
+                            <div class="fp-mock-bar"><span class="fp-mock-dot fp-mock-dot--r"></span><span class="fp-mock-dot fp-mock-dot--y"></span><span class="fp-mock-dot fp-mock-dot--g"></span></div>
+                            <div class="fp-mock-body">
+                                <img src="bankos.png" class="fp-mock-screenshot" alt="BankOS screenshot">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Archive toggle -->
+            <div class="archive-toggle-wrap">
+                <button class="archive-toggle hover-target" id="archive-toggle">
+                    <span>Explore Project Archive</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+            </div>
+
+            <!-- Archive drawer -->
+            <div class="archive-drawer" id="archive-drawer">
+                <div class="archive-grid">
+                    <!-- CrimeLens -->
+                    <div class="archive-card hover-target">
+                        <span class="fp-badge">Random Forest CLF</span>
+                        <h3 class="archive-card-title">CrimeLens</h3>
+                        <p class="archive-card-highlights">Random Forest &nbsp;·&nbsp; ML Pipelines &nbsp;·&nbsp; Geospatial Analytics &nbsp;·&nbsp; NCRB Data</p>
+                        <p class="archive-card-desc">Predicts location crime risk indices using historical data (2018-2022). Employs rate normalizations and violent ratio coefficients, training a Random Forest classifier with 83% accuracy.</p>
+                        <div class="fp-tech"><span class="fp-tech-tag">Python</span><span class="fp-tech-tag">Scikit-learn</span><span class="fp-tech-tag">Pandas</span><span class="fp-tech-tag">Flask</span><span class="fp-tech-tag">Folium</span></div>
+                        <div class="fp-actions">
+                            <a href="projects/crimelens.html" class="view-case-study hover-target">View Case Study <span class="arrow-icon">↗</span></a>
+                            <a href="https://github.com/ishhh115/CrimeLens" target="_blank" class="view-case-study-github hover-target">GitHub <span class="arrow-icon">↗</span></a>
+                        </div>
+                    </div>
+                    <!-- GitHub Analyzer -->
+                    <div class="archive-card hover-target">
+                        <span class="fp-badge">Dev Insights Tool</span>
+                        <h3 class="archive-card-title">GitHub Analyzer</h3>
+                        <p class="archive-card-highlights">Profile Insights &nbsp;·&nbsp; GitHub API &nbsp;·&nbsp; Repo Stats &nbsp;·&nbsp; MERN</p>
+                        <p class="archive-card-desc">A full-stack tool that pulls a GitHub profile or repository and surfaces stats and insights — languages, activity, and repo-level metrics — in a clean dashboard view.</p>
+                        <div class="fp-tech"><span class="fp-tech-tag">React</span><span class="fp-tech-tag">Node.js</span><span class="fp-tech-tag">Express</span><span class="fp-tech-tag">MongoDB</span><span class="fp-tech-tag">GitHub API</span></div>
+                        <div class="fp-actions">
+                            <a href="projects/github-analyzer.html" class="view-case-study hover-target">View Case Study <span class="arrow-icon">↗</span></a>
+                            <a href="https://github.com/ishhh115/github-analyzer" target="_blank" class="view-case-study-github hover-target">GitHub <span class="arrow-icon">↗</span></a>
+                        </div>
+                    </div>
+                    <!-- TradeFlow -->
+                    <div class="archive-card hover-target">
+                        <span class="fp-badge">Full-Stack Web App</span>
+                        <h3 class="archive-card-title">TradeFlow</h3>
+                        <p class="archive-card-highlights">Full-Stack &nbsp;·&nbsp; Workflow &nbsp;·&nbsp; MERN</p>
+                        <p class="archive-card-desc">A full-stack workflow system monitoring trading transactions, real-time logging operations, and database states.</p>
+                        <div class="fp-tech"><span class="fp-tech-tag">React</span><span class="fp-tech-tag">Node.js</span><span class="fp-tech-tag">Express</span><span class="fp-tech-tag">MongoDB</span><span class="fp-tech-tag">WebSockets</span></div>
+                        <div class="fp-actions">
+                            <a href="projects/tradeflow.html" class="view-case-study hover-target">View Case Study <span class="arrow-icon">↗</span></a>
+                            <a href="https://github.com/ishhh115/TradeFlow" target="_blank" class="view-case-study-github hover-target">GitHub <span class="arrow-icon">↗</span></a>
+                        </div>
+                    </div>
+                    <!-- Ami Wellness -->
+                    <div class="archive-card hover-target">
+                        <span class="fp-badge">AI Wellness Platform</span>
+                        <h3 class="archive-card-title">Ami Wellness</h3>
+                        <p class="archive-card-highlights">AI-Driven Insights &nbsp;·&nbsp; Groq (Llama 3) &nbsp;·&nbsp; Supabase &nbsp;·&nbsp; PostgreSQL</p>
+                        <p class="archive-card-desc">A full-stack wellness platform that transforms static health metrics into a dynamic, AI-driven "Perspective" — integrating Groq (Llama 3) with a persistent PostgreSQL backend via Supabase.</p>
+                        <div class="fp-tech"><span class="fp-tech-tag">TypeScript</span><span class="fp-tech-tag">Next.js</span><span class="fp-tech-tag">Supabase</span><span class="fp-tech-tag">PostgreSQL</span><span class="fp-tech-tag">Groq (Llama 3)</span></div>
+                        <div class="fp-actions">
+                            <a href="projects/ami-wellness.html" class="view-case-study hover-target">View Case Study <span class="arrow-icon">↗</span></a>
+                            <a href="https://github.com/ishhh115/ami-wellness" target="_blank" class="view-case-study-github hover-target">GitHub <span class="arrow-icon">↗</span></a>
+                        </div>
+                    </div>
+                    <!-- Cognify -->
+                    <div class="archive-card hover-target">
+                        <span class="fp-badge">AI PDF Processing</span>
+                        <h3 class="archive-card-title">Cognify</h3>
+                        <p class="archive-card-highlights">PDF Text Extraction &nbsp;·&nbsp; SM-2 Intervals &nbsp;·&nbsp; Gemini API &nbsp;·&nbsp; Web Speech API</p>
+                        <p class="archive-card-desc">Converts uploaded research publications and textbooks into learning cards and quizzes. Uses SM-2 spaced repetition calculations and handles hands-free speech voice queries.</p>
+                        <div class="fp-tech"><span class="fp-tech-tag">React</span><span class="fp-tech-tag">Node.js</span><span class="fp-tech-tag">Express</span><span class="fp-tech-tag">MongoDB</span><span class="fp-tech-tag">Gemini API</span></div>
+                        <div class="fp-actions">
+                            <a href="projects/cognify.html" class="view-case-study hover-target">View Case Study <span class="arrow-icon">↗</span></a>
+                            <a href="https://github.com/ishhh115/Cognify" target="_blank" class="view-case-study-github hover-target">GitHub <span class="arrow-icon">↗</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================
+         SCENE 7 — EDUCATION & ACTIVITIES
+         ============================ -->
+    <section class="section section--cream section-padding" id="education">
+        <div class="content-wrap">
+            <!-- Row 1: Education + Languages/Hobbies -->
+            <!-- Row 1: Education + Languages -->
+            <div class="education-lang-grid">
+                <!-- Education (Left) -->
+                <div class="education-col reveal">
+                    <h2 class="col-title">Education</h2>
+                    <div class="tl-list">
+                        <div class="tl-item">
+                            <span class="tl-date">2024 — 2028</span>
+                            <h4 class="tl-title">B.Tech, Computer Science &amp; Engineering</h4>
+                            <p class="tl-desc">Geethanjali College of Engineering and Technology, Hyderabad &nbsp;·&nbsp; CGPA: 8.62</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Languages (Right) -->
+                <div class="lang-col reveal">
+                    <h2 class="col-title">Languages</h2>
+                    <div class="lang-rows">
+                        <div class="lang-row"><span class="lang-name">English</span><span class="lang-level">Professional</span></div>
+                        <div class="lang-row"><span class="lang-name">Hindi</span><span class="lang-level">Native</span></div>
+                        <div class="lang-row"><span class="lang-name">Telugu</span><span class="lang-level">Fluent</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Activities Horizontal Leadership Journey -->
+            <div class="activities-journey-section">
+                <h2 class="col-title reveal" style="margin-top: 4rem;">Activities &amp; Leadership</h2>
+                <div class="journey-container reveal">
+                    <!-- Dynamic Connecting SVG Line -->
+                    <svg class="journey-line-svg">
+                        <path class="journey-path" d="" />
+                    </svg>
+
+                    <div class="journey-grid">
+                        <div class="journey-card reveal">
+                            <span class="milestone-number">01</span>
+                            <h4 class="tl-title">National Entrepreneurship Network (NEN)</h4>
+                            <p class="tl-desc">Outreach Team &nbsp;·&nbsp; GCET</p>
+                            <div class="tl-tags"><span class="tl-tag">Networking</span><span class="tl-tag">Public Speaking</span><span class="tl-tag">Stakeholder Communication</span><span class="tl-tag">Event Management</span></div>
+                        </div>
+
+                        <div class="journey-card reveal">
+                            <span class="milestone-number">02</span>
+                            <h4 class="tl-title">Robotics Club</h4>
+                            <p class="tl-desc">Team &nbsp;·&nbsp; GCET</p>
+                            <div class="tl-tags"><span class="tl-tag">Teamwork</span><span class="tl-tag">Problem Solving</span><span class="tl-tag">Hands-on Prototyping</span></div>
+                        </div>
+
+                        <div class="journey-card reveal">
+                            <span class="milestone-number">03</span>
+                            <h4 class="tl-title">GDG on Campus</h4>
+                            <p class="tl-desc">Tech Team &nbsp;·&nbsp; GCTC</p>
+                            <div class="tl-tags"><span class="tl-tag">Cross-functional Collaboration</span><span class="tl-tag">Technical Coordination</span><span class="tl-tag">Community Building</span></div>
+                        </div>
+
+                        <div class="journey-card reveal">
+                            <span class="milestone-number">04</span>
+                            <h4 class="tl-title">IIC-IGNITE</h4>
+                            <p class="tl-desc">Networking Cell &nbsp;·&nbsp; Institution's Innovation Council (IIC), GCET</p>
+                            <div class="tl-tags"><span class="tl-tag">Networking</span><span class="tl-tag">Event Management</span><span class="tl-tag">Relationship Building</span></div>
+                        </div>
+
+                        <div class="journey-card reveal">
+                            <span class="milestone-number">05</span>
+                            <h4 class="tl-title">NSS Volunteer</h4>
+                            <p class="tl-desc">Coordinated logic operations, scheduling details, and drive logistics for community campaigns with 100+ local participants.</p>
+                            <div class="tl-tags"><span class="tl-tag">Leadership</span><span class="tl-tag">Organization</span><span class="tl-tag">Community Outreach</span></div>
+                        </div>
+
+                        <div class="journey-card reveal">
+                            <span class="milestone-number">06</span>
+                            <h4 class="tl-title">Hackathons &amp; Events</h4>
+                            <p class="tl-desc">Organized many national-level events on campus with 1000+ participants, including Geenovate, Bid2Build, and NEN ARC.</p>
+                            <div class="tl-tags"><span class="tl-tag">Team Leadership</span><span class="tl-tag">Event Management</span><span class="tl-tag">Content Planning</span><span class="tl-tag">Strategic Thinking</span><span class="tl-tag">Time Management</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================
+         SCENE 8 — CONTACT
+         ============================ -->
+    <section class="section section--dark section-padding" id="contact">
+        <div class="content-wrap">
+            <div class="contact-header">
+                <span class="section-label">GET IN TOUCH</span>
+                <h2 class="section-title reveal">Let's Build <em>Something Together</em></h2>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-links">
+                    <a href="mailto:ishhcodes@gmail.com" class="contact-link-card hover-target">
+                        <div class="contact-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                        <div><span class="contact-link-label">EMAIL</span><span class="contact-link-value">ishhcodes@gmail.com</span></div>
+                    </a>
+                    <a href="tel:+919121834024" class="contact-link-card hover-target">
+                        <div class="contact-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+                        <div><span class="contact-link-label">PHONE</span><span class="contact-link-value">+91 91218 34024</span></div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/isha-parveen-8b82b3307" target="_blank" class="contact-link-card hover-target">
+                        <div class="contact-link-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.8v8.37h2.8v-4.67c0-.25.02-.5.1-.68a1.14 1.14 0 0 1 1-.77c.76 0 1 .58 1 1.42v4.7h2.78M6.5 8.37a1.37 1.37 0 0 0 1.3-1.37c0-.76-.53-1.3-1.3-1.3s-1.3.54-1.3 1.3a1.37 1.37 0 0 0 1.3 1.37M8 18.5V10.1H5.1v8.4H8z"/></svg></div>
+                        <div><span class="contact-link-label">LINKEDIN</span><span class="contact-link-value">linkedin.com/in/isha-parveen</span></div>
+                    </a>
+                    <a href="https://github.com/ishhh115" target="_blank" class="contact-link-card hover-target">
+                        <div class="contact-link-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div>
+                        <div><span class="contact-link-label">GITHUB</span><span class="contact-link-value">github.com/ishhh115</span></div>
+                    </a>
+                </div>
+
+                <form class="contact-form-card" action="https://formspree.io/f/xrejovyg" method="POST" id="contact-form">
+                    <div class="form-row">
+                        <div class="form-group"><label for="frm-name" class="form-label">Name</label><input type="text" id="frm-name" name="name" class="form-input" placeholder="Your name" required></div>
+                        <div class="form-group"><label for="frm-email" class="form-label">Email</label><input type="email" id="frm-email" name="email" class="form-input" placeholder="your@email.com" required></div>
+                    </div>
+                    <div class="form-group"><label for="frm-subject" class="form-label">Subject</label><input type="text" id="frm-subject" name="subject" class="form-input" placeholder="What's this about?"></div>
+                    <div class="form-group"><label for="frm-message" class="form-label">Message</label><textarea id="frm-message" name="message" class="form-textarea" placeholder="Tell me what you're working on..." required></textarea></div>
+                    <button type="submit" class="btn--submit hover-target">
+                        <span>Send Message</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                    </button>
+                    <div class="form-status" id="form-status"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer section section--dark">
+        <div class="footer-watermark">ISHA PARVEEN</div>
+        <p class="footer-copy">© 2026 <strong>Isha Parveen</strong>. Crafted with care.</p>
+    </footer>
+
+    <!-- ============================
+         SCRIPTS
+         ============================ -->
+    <script src="js/cursor.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/case-study.js" defer></script>
+</body>
+</html>

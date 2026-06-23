@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cognify | AI PDF spaced Repetition Tool</title>
+    <meta name="description" content="Case study of Cognify — an AI PDF learning platform utilizing Gemini API, SM-2 spaced repetition algorithm, and Web Speech API.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+
+    <!-- GSAP + ScrollTrigger + Lenis -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer></script>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body class="case-study-body">
+    <!-- Fullscreen Transition Overlay -->
+    <div class="transition-overlay"></div>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Navigation -->
+    <header class="case-study-nav">
+        <a href="../portfolio.html#work" class="back-to-portfolio hover-target">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Back to Portfolio
+        </a>
+    </header>
+
+    <!-- 01 — HERO SECTION -->
+    <section class="case-study-hero">
+        <div class="case-study-hero-inner">
+            <span class="case-study-hero-tag">AI + spaced Repetition</span>
+            <h1 class="case-study-hero-title">Cognify</h1>
+            <p class="case-study-hero-subtitle">Converts uploads into study cards running SuperMemo (SM-2) scheduling intervals</p>
+            
+            <div class="case-study-meta-grid">
+                <div class="case-study-meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">Lead Developer</span>
+                </div>
+                <div class="case-study-meta-item">
+                    <span class="meta-label">Stack</span>
+                    <span class="meta-value">React, Node.js, Express, MongoDB, JWT, Gemini API, Multer, Axios, Tailwind CSS</span>
+                </div>
+                <div class="case-study-meta-item">
+                    <span class="meta-label">Duration</span>
+                    <span class="meta-value">2 Months</span>
+                </div>
+                </div>
+
+            <!-- Hero Visual Showcase -->
+            <div class="case-study-hero-visual">
+                <div class="fp-visual-placeholder fp-visual--scholar">
+                    <div class="fp-mock-frame">
+                        <div class="fp-mock-bar"><span class="fp-mock-dot fp-mock-dot--r"></span><span class="fp-mock-dot fp-mock-dot--y"></span><span class="fp-mock-dot fp-mock-dot--g"></span></div>
+                        <div class="fp-mock-body">
+                            <div class="fp-mock-line fp-mock-line--accent"></div>
+                            <div class="fp-mock-line fp-mock-line--long"></div>
+                            <div class="fp-mock-line fp-mock-line--medium"></div>
+                            <div class="fp-mock-line fp-mock-line--short"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 02 — PRODUCT VISION -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">02</span>
+                <h2 class="cs-section-title">Product<br>Vision</h2>
+                <span class="cs-section-subtitle">AI PDF Spaced Repetition</span>
+            </div>
+            <div class="cs-col-content">
+                <p>AI-powered learning platform that converts uploaded PDFs into interactive study workflows. Engineered a production-style MERN application with secure authentication, document ingestion, context-aware Q&amp;A, flashcard generation, quiz generation, and voice-enabled search. Built end-to-end data flow from file upload to AI output using Google Gemini, optimized for scalable content processing and retrieval.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 03 — THE SYSTEM -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">03</span>
+                <h2 class="cs-section-title">The<br>System</h2>
+                <span class="cs-section-subtitle">Text to Flashcards</span>
+            </div>
+            <div class="cs-col-content">
+                <p>Incoming files undergo extraction, feeding text nodes to the Gemini API to extract high-density learning objectives before scheduling cards via interval formulas.</p>
+                
+                <div class="diagram-container">
+                    <div class="diagram-node">
+                        <span class="node-num">01</span>
+                        <h4 class="node-title">PDF Ingest</h4>
+                        <p class="node-desc">Multer upload &amp; text extraction</p>
+                    </div>
+                    <span class="diagram-arrow">&rarr;</span>
+                    <div class="diagram-node">
+                        <span class="node-num">02</span>
+                        <h4 class="node-title">Gemini AI</h4>
+                        <p class="node-desc">Q&amp;A cards compilation</p>
+                    </div>
+                    <span class="diagram-arrow">&rarr;</span>
+                    <div class="diagram-node">
+                        <span class="node-num">03</span>
+                        <h4 class="node-title">SM-2 Math</h4>
+                        <p class="node-desc">Interval calculation algorithms</p>
+                    </div>
+                    <span class="diagram-arrow">&rarr;</span>
+                    <div class="diagram-node">
+                        <span class="node-num">04</span>
+                        <h4 class="node-title">Voice Study</h4>
+                        <p class="node-desc">Web Speech hands-free runs</p>
+                    </div>
+                </div>
+
+                <p>Once generated, users can trigger hands-free study loops. The Web Speech API dictates flashcard questions, listening for user voice answers before grading them.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 04 — KEY FEATURES -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">04</span>
+                <h2 class="cs-section-title">Key<br>Features</h2>
+                <span class="cs-section-subtitle">Learning Engine</span>
+            </div>
+            <div class="cs-col-content">
+                <ul class="cs-features-list">
+                    <li class="cs-feature-item"><strong>Document Q&amp;A:</strong> Context-aware document Q&amp;A using Google Gemini with PDF-aware prompt grounding.</li>
+                    <li class="cs-feature-item"><strong>Flashcard Engine:</strong> SM-2 spaced repetition flashcard engine for long-term memory retention optimization.</li>
+                    <li class="cs-feature-item"><strong>Voice Search:</strong> Voice-based query support using Web Speech API for hands-free interactions.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 05 — CHALLENGES & SOLUTIONS -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">05</span>
+                <h2 class="cs-section-title">Challenges<br>&amp; Solutions</h2>
+                <span class="cs-section-subtitle">Parsing Errors</span>
+            </div>
+            <div class="cs-col-content">
+                <p>Textbook PDF files contain complex layout structures (multi-column text, headers, formulas) that corrupt standard top-to-bottom text readers.</p>
+
+                <div class="challenge-card">
+                    <div class="challenge-header">
+                        <h4 class="challenge-title">Challenge: Multi-Column PDF text overlaps during extraction</h4>
+                    </div>
+                    <div class="challenge-body">
+                        <p>Raw text extractors read pages horizontally, merging unrelated columns together and destroying sentence structures, which leads to corrupted flashcards.</p>
+                    </div>
+                    <div class="challenge-fix-header">
+                        <h5 class="challenge-fix-title">Fix: Layout-Aware Parsing &amp; Text block Normalization</h5>
+                    </div>
+                    <div class="challenge-fix-body">
+                        <p>We implemented a layout-aware PDF parser in the Node middleware. It analyzes page elements, bounding boxes, and column coordinates. The parser reconstructs the text flow vertically down individual columns before generating text blocks, ensuring that the input passed to the Gemini API preserves logical sentence structures and context.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 06 — TECHNICAL ACHIEVEMENTS -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">06</span>
+                <h2 class="cs-section-title">Technical<br>Achievements</h2>
+                <span class="cs-section-subtitle">Learning Metrics</span>
+            </div>
+            <div class="cs-col-content">
+                <ul class="cs-features-list" style="margin-bottom: 3rem;">
+                    <li class="cs-feature-item">Designed and implemented modular REST APIs for authentication, document management, flashcards, quizzes, and AI workflows.</li>
+                    <li class="cs-feature-item">Built secure JWT authentication and authorization middleware for protected routes and user-scoped access.</li>
+                    <li class="cs-feature-item">Developed PDF ingestion pipeline with Multer and pdf-parse, including text extraction and chunking for LLM-ready context windows.</li>
+                    <li class="cs-feature-item">Integrated Gemini API to automate flashcard and quiz generation from document chunks.</li>
+                    <li class="cs-feature-item">Created responsive React frontend with reusable components, route protection, and Axios service layer for clean client-server integration.</li>
+                    <li class="cs-feature-item">Implemented MongoDB schema architecture for users, documents, chat history, flashcards, and quiz results.</li>
+                </ul>
+
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-stat">95%</div>
+                        <div class="result-lbl">Layout Parsing Accuracy</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-stat">40%</div>
+                        <div class="result-lbl">Memory Retrieval Improvements</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-stat">0</div>
+                        <div class="result-lbl">Hands-free Touch Actions Required</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="case-study-footer">
+        <h2 class="cs-section-title">Explore More Projects</h2>
+        <div class="footer-btn-wrap" style="display: flex; gap: 1.5rem; justify-content: center; align-items: center; flex-wrap: wrap;">
+            <a href="scholarsync.html" class="btn btn--ghost hover-target">Back to Featured Work &rarr;</a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/cursor.js" defer></script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/animations.js" defer></script>
+    <script src="../js/case-study.js" defer></script>
+</body>
+</html>

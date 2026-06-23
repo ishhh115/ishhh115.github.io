@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScholarSync | Vector RAG Semantic Discovery Platform</title>
+    <meta name="description" content="Case study of ScholarSync — an AI-powered semantic paper indexing and vector search tool.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+
+    <!-- GSAP + ScrollTrigger + Lenis -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer></script>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body class="case-study-body">
+    <!-- Fullscreen Transition Overlay -->
+    <div class="transition-overlay"></div>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Navigation -->
+    <header class="case-study-nav">
+        <a href="../portfolio.html#work" class="back-to-portfolio hover-target">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Back to Portfolio
+        </a>
+    </header>
+
+    <!-- 01 — HERO SECTION -->
+    <section class="case-study-hero">
+        <div class="case-study-hero-inner">
+            <span class="case-study-hero-tag">Semantic Discovery &amp; NLP</span>
+            <h1 class="case-study-hero-title">ScholarSync</h1>
+            <p class="case-study-hero-subtitle">High-speed academic discovery and LLM vector RAG pipeline</p>
+            
+            <div class="case-study-meta-grid">
+                <div class="case-study-meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">ML Engineer</span>
+                </div>
+                <div class="case-study-meta-item">
+                    <span class="meta-label">Stack</span>
+                    <span class="meta-value">FastAPI, ChromaDB, SentenceTransformers</span>
+                </div>
+                <div class="case-study-meta-item">
+                    <span class="meta-label">Duration</span>
+                    <span class="meta-value">2 Months</span>
+                </div>
+                </div>
+
+            <!-- Hero Visual Showcase -->
+            <div class="case-study-hero-visual">
+                <div class="fp-visual-placeholder fp-visual--scholar">
+                    <div class="fp-mock-frame">
+                        <div class="fp-mock-bar"><span class="fp-mock-dot fp-mock-dot--r"></span><span class="fp-mock-dot fp-mock-dot--y"></span><span class="fp-mock-dot fp-mock-dot--g"></span></div>
+                        <div class="fp-mock-body">
+                            <img src="../scholarsync.png" class="fp-mock-screenshot" alt="ScholarSync screenshot">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 02 — WHY IT EXISTS -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">02</span>
+                <h2 class="cs-section-title">Why It<br>Exists</h2>
+                <span class="cs-section-subtitle">Keyword Limitations</span>
+            </div>
+            <div class="cs-col-content">
+                <p>Traditional academic databases (like Google Scholar or local indexes) rely heavily on literal token matching. If a researcher searches for "deep learning weight initialization", the system might completely miss crucial papers that discuss "variance-scaling gradient convergence parameters" because the exact words don't align.</p>
+                <p>ScholarSync was developed to enable semantic discovery. By mapping unstructured academic documents into dense multidimensional vector spaces, it recognizes conceptual similarities regardless of the specific vocabulary used by authors.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 03 — THE SYSTEM -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">03</span>
+                <h2 class="cs-section-title">The<br>System</h2>
+                <span class="cs-section-subtitle">ChromaDB + Embedding Loop</span>
+            </div>
+            <div class="cs-col-content">
+                <p>ScholarSync digests research publications, extracts their raw layout elements, converts text blocks into dense vector embeddings locally, and queries ChromaDB for cosine-distance matching.</p>
+                
+                <div class="diagram-container">
+                    <div class="diagram-node">
+                        <span class="node-num">01</span>
+                        <h4 class="node-title">PDF Ingestion</h4>
+                        <p class="node-desc">PyPDF extraction &amp; parsing</p>
+                    </div>
+                    <span class="diagram-arrow">&rarr;</span>
+                    <div class="diagram-node">
+                        <span class="node-num">02</span>
+                        <h4 class="node-title">SentenceTransformers</h4>
+                        <p class="node-desc">768-dim dense embedding generation</p>
+                    </div>
+                    <span class="diagram-arrow">&rarr;</span>
+                    <div class="diagram-node">
+                        <span class="node-num">03</span>
+                        <h4 class="node-title">ChromaDB Store</h4>
+                        <p class="node-desc">Persistent vector indices</p>
+                    </div>
+                    <span class="diagram-arrow">&rarr;</span>
+                    <div class="diagram-node">
+                        <span class="node-num">04</span>
+                        <h4 class="node-title">FastAPI Service</h4>
+                        <p class="node-desc">Semantic query endpoint</p>
+                    </div>
+                </div>
+
+                <p>Once vectors are retrieved, they are injected into an LLM context window using structured prompt templates, allowing researchers to ask synthesis questions across multiple papers simultaneously.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 04 — KEY FEATURES -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">04</span>
+                <h2 class="cs-section-title">Key<br>Features</h2>
+                <span class="cs-section-subtitle">Semantic Search Toolkit</span>
+            </div>
+            <div class="cs-col-content">
+                <p>The system is fine-tuned for dense academic texts, supporting localized pipeline execution for zero external service dependency.</p>
+                
+                <ul class="cs-features-list">
+                    <li class="cs-feature-item"><strong>Semantic Discovery:</strong> Cosine-similarity searches running on local vector arrays.</li>
+                    <li class="cs-feature-item"><strong>Multi-Paper Synthesis:</strong> Generates cohesive literature reviews across several matching vector sources.</li>
+                    <li class="cs-feature-item"><strong>Local Embeddings:</strong> Powered by HuggingFace models, running entirely locally on CPU/GPU without external API overheads.</li>
+                    <li class="cs-feature-item"><strong>Metadata Parser:</strong> Extracts publication years, author names, and journal domains to support composite filters.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 05 — CHALLENGES & SOLUTIONS -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">05</span>
+                <h2 class="cs-section-title">Challenges<br>&amp; Solutions</h2>
+                <span class="cs-section-subtitle">Context Engineering</span>
+            </div>
+            <div class="cs-col-content">
+                <p>Ingesting full research publications (which often exceed 30 pages) poses extreme challenges for model context windows and memory footprints.</p>
+
+                <div class="challenge-card">
+                    <div class="challenge-header">
+                        <h4 class="challenge-title">Challenge: Token Overload and Long Context Hallucinations</h4>
+                    </div>
+                    <div class="challenge-body">
+                        <p>Passing complete papers into the LLM caused context overflows, high latency, and key details to get lost in the middle of long texts.</p>
+                    </div>
+                    <div class="challenge-fix-header">
+                        <h5 class="challenge-fix-title">Fix: Hierarchical Chunking &amp; Cross-Encoder Reranking</h5>
+                    </div>
+                    <div class="challenge-fix-body">
+                        <p>We designed a chunking pipeline that slices papers into overlapping 500-token sections tagged by document region (e.g. Abstract, Methods). During query time, a fast cosine-similarity search finds the top 20 chunks, which are then passed to a Cross-Encoder reranking model to filter down to the top 5 most relevant segments for final prompt generation. This reduced LLM noise and context consumption by 80%.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 06 — IMPACT & RESULTS -->
+    <section class="cs-section">
+        <div class="cs-grid">
+            <div class="cs-col-header">
+                <span class="cs-number">06</span>
+                <h2 class="cs-section-title">Impact &amp;<br>Results</h2>
+                <span class="cs-section-subtitle">System Benchmarks</span>
+            </div>
+            <div class="cs-col-content">
+                <p>The resulting search architecture provides sub-second semantic queries on local hardware while ensuring zero API call billing.</p>
+
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-stat">92%</div>
+                        <div class="result-lbl">Retrieval Precision Metric</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-stat">&lt;800ms</div>
+                        <div class="result-lbl">Query Lookup Latency</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-stat">100%</div>
+                        <div class="result-lbl">Local Embedding Processing</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="case-study-footer">
+        <h2 class="cs-section-title">Explore More Projects</h2>
+        <div class="footer-btn-wrap" style="display: flex; gap: 1.5rem; justify-content: center; align-items: center; flex-wrap: wrap;">
+            <a href="bankos.html" class="btn btn--ghost hover-target">Next Project: BankOS &rarr;</a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/cursor.js" defer></script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/animations.js" defer></script>
+    <script src="../js/case-study.js" defer></script>
+</body>
+</html>

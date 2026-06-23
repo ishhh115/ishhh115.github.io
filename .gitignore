@@ -1,0 +1,10 @@
+# Backups & Previews
+*.backup.html
+*.backup.jpg
+*preview*.html
+*.backup
+
+# Logs
+*.log
+.gemini/
+mcp_state.json
