@@ -2003,14 +2003,17 @@ body.cursor-hover .cursor-ring {
 }
 
 .contact-link-label {
+    display: block;
     font-family: var(--font-mono);
     font-size: 0.68rem;
     color: var(--gold);
     letter-spacing: 0.08em;
     font-weight: 600;
+    margin-bottom: 0.3rem;
 }
 
 .contact-link-value {
+    display: block;
     font-size: 0.98rem;
     color: var(--cream);
     font-weight: 300;
